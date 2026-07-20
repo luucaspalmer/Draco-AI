@@ -1,0 +1,27 @@
+#body{transform-origin:150px 165px;animation:breathe 4s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.012)}}
+#lidLr,#lidRr{animation:blink 4.6s ease-in-out infinite;transform-origin:117px 141px}
+#lidRr{transform-origin:183px 141px}
+@keyframes blink{0%,90%,100%{opacity:0}92%{opacity:1}96%{opacity:0}}
+#mouthGroup{transform-origin:150px 248px}
+[data-mode="talking"] #mouthGroup{animation:talk .34s ease-in-out infinite}
+@keyframes talk{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.65)}}
+[data-mode="thinking"] #thinkDots{opacity:1;animation:float 2s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+[data-mode="thinking"] #browL{animation:raiseL 1.8s ease-in-out infinite;transform-origin:117px 112px}
+[data-mode="thinking"] #browR{animation:raiseR 1.8s ease-in-out infinite;transform-origin:183px 112px}
+@keyframes raiseL{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px) rotate(-3deg)}}
+@keyframes raiseR{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px) rotate(3deg)}}
+[data-mode="thinking"] #eyeL,[data-mode="thinking"] #eyeR{animation:lookaway 1.8s ease-in-out infinite}
+@keyframes lookaway{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+[data-mode="happy"] #eyeL,[data-mode="happy"] #eyeR{opacity:0}
+[data-mode="happy"] #eyeHappyL,[data-mode="happy"] #eyeHappyR{opacity:1}
+[data-mode="happy"] #mouthGroup{opacity:0}
+[data-mode="happy"] #mouthHappy{opacity:1}
+[data-mode="happy"] #blushL,[data-mode="happy"] #blushR{opacity:0.55}
+[data-mode="happy"] #browL{transform:translateY(-3px) rotate(-4deg)}
+[data-mode="happy"] #browR{transform:translateY(-3px) rotate(4deg)}
+[data-mode="happy"] #body{animation:happybounce 3.2s ease-in-out infinite}
+@keyframes happybounce{0%,100%{transform:scale(1) translateY(0)}50%{transform:scale(1.015) translateY(-2px)}}
+button{cursor:pointer}
+button.active{background:var(--surface-1);border-color:var(--border-stronger)}

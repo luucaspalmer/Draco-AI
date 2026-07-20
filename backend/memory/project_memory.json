@@ -1,0 +1,23 @@
+{
+    "projeto_draco_ai": {
+        "valor": "Draco AI",
+        "importancia": 8,
+        "confianca": 0.9,
+        "criado_em": "2026-07-17 21:17:10",
+        "atualizado_em": "2026-07-18 10:10:29"
+    },
+    "projeto_uma_ia_pessoal_com_memria_cognitiva": {
+        "valor": "uma IA pessoal com memória cognitiva",
+        "importancia": 8,
+        "confianca": 0.9,
+        "criado_em": "2026-07-18 10:10:29",
+        "atualizado_em": "2026-07-18 10:10:29"
+    },
+    "projeto_atualmente": {
+        "valor": "atualmente",
+        "importancia": 8,
+        "confianca": 0.9,
+        "criado_em": "2026-07-18 10:30:17",
+        "atualizado_em": "2026-07-18 10:30:17"
+    }
+}

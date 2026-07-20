@@ -1,0 +1,36 @@
+{
+    "entidades": {
+        "Lucas": {
+            "tipo": "pessoa",
+            "criado_em": "2026-07-18 10:37:09"
+        },
+        "Draco AI": {
+            "tipo": "projeto",
+            "criado_em": "2026-07-18 10:37:09"
+        },
+        "Memória Cognitiva": {
+            "tipo": "funcionalidade",
+            "criado_em": "2026-07-18 10:37:09"
+        }
+    },
+    "relacoes": [
+        {
+            "origem": "Lucas",
+            "relacao": "criador",
+            "destino": "Draco AI",
+            "criado_em": "2026-07-18 10:37:09"
+        },
+        {
+            "origem": "Draco AI",
+            "relacao": "objetivo",
+            "destino": "IA pessoal cognitiva",
+            "criado_em": "2026-07-18 10:37:09"
+        },
+        {
+            "origem": "Draco AI",
+            "relacao": "desenvolvimento_atual",
+            "destino": "Memória Cognitiva",
+            "criado_em": "2026-07-18 10:37:09"
+        }
+    ]
+}

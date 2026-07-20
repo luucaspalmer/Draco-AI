@@ -1,0 +1,116 @@
+{
+    "history": [
+        {
+            "role": "user",
+            "content": "Draco, qual é meu projeto?"
+        },
+        {
+            "role": "assistant",
+            "content": "Meu propósito é: Ser um parceiro de longo prazo para auxiliar aprendizado, criação, organização, desenvolvimento de projetos e evolução pessoal."
+        },
+        {
+            "role": "user",
+            "content": "Draco, qual é meu projeto?"
+        },
+        {
+            "role": "assistant",
+            "content": "Meu propósito é: Ser um parceiro de longo prazo para auxiliar aprendizado, criação, organização, desenvolvimento de projetos e evolução pessoal."
+        },
+        {
+            "role": "user",
+            "content": "Draco, qual é meu projeto?"
+        },
+        {
+            "role": "assistant",
+            "content": "Meu propósito é: Ser um parceiro de longo prazo para auxiliar aprendizado, criação, organização, desenvolvimento de projetos e evolução pessoal."
+        },
+        {
+            "role": "user",
+            "content": "Draco, qual é meu projeto?"
+        },
+        {
+            "role": "assistant",
+            "content": "Meu propósito é: Ser um parceiro de longo prazo para auxiliar aprendizado, criação, organização, desenvolvimento de projetos e evolução pessoal."
+        },
+        {
+            "role": "user",
+            "content": "Draco, qual é meu projeto?"
+        },
+        {
+            "role": "assistant",
+            "content": "Minhas memorias atuais:\n\nPerfil do usuario:\n- nome: lucas\n\nProjetos:\n- youth-ro ragnarok\n\nObjetivos:\n\nConhecimentos:\n\nPersonalidade:\n\nResposta:\n- estilo: respostas técnicas ?\n"
+        },
+        {
+            "role": "user",
+            "content": "Draco qual é o meu projeto ?"
+        },
+        {
+            "role": "assistant",
+            "content": "\nPROJETOS:\n- youth-ro ragnarok\n"
+        },
+        {
+            "role": "user",
+            "content": "Draco, qual é meu nome ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Seu nome é lucas."
+        },
+        {
+            "role": "user",
+            "content": "Draco, qual é meu projeto?"
+        },
+        {
+            "role": "assistant",
+            "content": "\nCATEGORIA:\n- projetos\n\nCONFIANCA:\n- 0.33\n\nORIGEM:\n- regras\n\nMEMORIA:\n- projetos: ['youth-ro ragnarok']\n"
+        },
+        {
+            "role": "user",
+            "content": "Draco, qual seu propósito?"
+        },
+        {
+            "role": "assistant",
+            "content": "Meu propósito é: Ser um parceiro de longo prazo para auxiliar aprendizado, criação, organização, desenvolvimento de projetos e evolução pessoal."
+        },
+        {
+            "role": "user",
+            "content": "Draco, qual é meu projeto?"
+        },
+        {
+            "role": "assistant",
+            "content": "\nCATEGORIA:\n- projetos\n\nCONFIANCA:\n- 0.33\n\nORIGEM:\n- regras\n\nMEMORIA:\n- projetos: ['youth-ro ragnarok']\n"
+        },
+        {
+            "role": "user",
+            "content": "Draco, qual é meu projeto?"
+        },
+        {
+            "role": "assistant",
+            "content": "Seu projeto é chamado \"youth-ro ragnarok\"."
+        },
+        {
+            "role": "user",
+            "content": "Draco, o que você lembra?"
+        },
+        {
+            "role": "assistant",
+            "content": "Lembre-se de que seu projeto é chamado \"youth-ro ragnarok\". Este é um desenvolvimento pessoal focado em jogos de RPG e simulações."
+        },
+        {
+            "role": "user",
+            "content": "Draco do que voce se lembra ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Eu lembro que seu projeto é chamado \"youth-ro ragnarok\". Este é um desenvolvimento pessoal focado em jogos de RPG e simulações."
+        },
+        {
+            "role": "user",
+            "content": "Draco, o que é ragnarok ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Ragnarok é uma mitologia nórdica que se refere a um grande conflito no fim do mundo, onde os deuses enfrentam as forças das trevas lideradas por Fenrir, Jormungandr e Hel. Esta história gótica inspirou diversos jogos de RPG, incluindo \"Ragnarok Online\", um jogo popular na Coreia do Sul que foi lançado em 1997."
+        }
+    ]
+}

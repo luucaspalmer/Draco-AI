@@ -1,0 +1,24 @@
+{
+    "localizacao": {
+        "valor": "Araucária no Paraná",
+        "importancia": 8,
+        "confianca": 1.0,
+        "criado_em": "2026-07-17 21:17:10",
+        "atualizado_em": "2026-07-17 22:22:11"
+    },
+    "idade": {
+        "valor": "27",
+        "importancia": 8,
+        "confianca": 1.0,
+        "criado_em": "2026-07-17 22:22:11",
+        "atualizado_em": "2026-07-17 22:22:11"
+    },
+    "nome": {
+        "valor": "Lucas",
+        "importancia": 10,
+        "confianca": 1.0,
+        "criado_em": "2026-07-19 00:04:57",
+        "atualizado_em": "2026-07-19 21:09:51",
+        "origem": "usuario"
+    }
+}

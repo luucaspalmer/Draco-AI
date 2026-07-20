@@ -1,0 +1,16 @@
+{
+    "interesse_ragnarok": {
+        "valor": "Ragnarok",
+        "importancia": 6,
+        "confianca": 0.9,
+        "criado_em": "2026-07-17 21:17:10",
+        "atualizado_em": "2026-07-17 21:17:10"
+    },
+    "outras_memoria_python": {
+        "valor": "Python",
+        "importancia": 5,
+        "confianca": 0.9,
+        "criado_em": "2026-07-17 21:17:10",
+        "atualizado_em": "2026-07-17 21:17:10"
+    }
+}

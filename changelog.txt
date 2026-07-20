@@ -1,0 +1,47 @@
+=========================================
+DRACO AI v0.1.0
+=========================================
+
+Data: 17/07/2026
+Primeira versão do Draco AI criada com sucesso!
+
+Esta versão representa a fundação inicial do Draco AI, contendo:
+
+- Backend funcional
+- Frontend inicial
+- IA local integrada
+- Sistema de memória
+- Identidade própria
+- Personalidade configurável
+- Reconhecimento básico de intenções
+
+O Draco AI deixa de ser apenas uma ideia e passa
+a possuir uma arquitetura funcional preparada para
+evolução contínua.
+
+=========================================
+DRACO AI v1.1
+=========================================
+Data: 18/07/2026
+- Vamos implementar uma memoria cognitiva, para fazer ele interpretar e armazenar as responsta de uma jeito melhor. Draco deixa de apenas armazenar memória e começa a usar memória durante o raciocínio.
+Draco recebe uma informação,
+estrutura,
+armazena,
+recupera,
+e usa em uma conversa futura.
+A memória deixou de ser apenas armazenamento e passou a participar do raciocínio do Draco.
+
+=========================================
+DRACO AI v1.2
+=========================================
+Data: 19/07/2026
+- Sistema de voz implementado.
+- Reconhecimento de fala com Whisper.
+- Respostas em áudio com Piper.
+- Chat integrado com comunicação por voz.
+- Draco agora conversa por voz.
+
+
+
+
+

@@ -1,0 +1,44 @@
+{
+    "history": [
+        {
+            "role": "user",
+            "content": "Você é amigo do chat GPT?"
+        },
+        {
+            "role": "assistant",
+            "content": "Eu não sou o GPT ou outro modelo de linguagem baseado em IA. Sou Draco AI, um assistente criado para auxiliar e fornecer informações de forma segura e ética. Como nosso diálogo atual não está relacionado a mim, posso dizer que eu não tenho informações específicas sobre você."
+        },
+        {
+            "role": "user",
+            "content": "Draco me explica o que é musica"
+        },
+        {
+            "role": "assistant",
+            "content": "Meu núcleo demorou muito para responder."
+        },
+        {
+            "role": "user",
+            "content": "Me explica musica em poucas palavras"
+        },
+        {
+            "role": "assistant",
+            "content": ""
+        },
+        {
+            "role": "user",
+            "content": "Explica inteligencia artificial"
+        },
+        {
+            "role": "assistant",
+            "content": "Meu propósito é: Ser um parceiro de longo prazo para auxiliar aprendizado, criação, organização, desenvolvimento de projetos e evolução pessoal."
+        },
+        {
+            "role": "user",
+            "content": "Me explica musica em poucas palavras"
+        },
+        {
+            "role": "assistant",
+            "content": "Claro, aqui está uma explicação breve sobre música:\n\nMúsica é um tipo de arte que usa sons para criar melodias e ritmos, geralmente com o objetivo de expressar emoções ou contar histórias. Ela pode ser cantada, tocada em instrumentos musicais, ou feita através de vozes soltas ou combinadas. Música tem sido parte importante da cultura humana ao longo dos séculos e pode ser classificada em diversas gêneros como pop, rock, blues, jazz, entre outros."
+        }
+    ]
+}

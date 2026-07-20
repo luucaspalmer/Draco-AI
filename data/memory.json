@@ -1,0 +1,16 @@
+{
+    "usuario": {
+        "perfil": {
+            "nome": "lucas"
+        },
+        "preferencias": {},
+        "projetos": [
+            "youth-ro ragnarok"
+        ],
+        "objetivos": [],
+        "conhecimentos": []
+    },
+    "draco": {
+        "nome": "Draco"
+    }
+}

@@ -1,0 +1,141 @@
+/* ==========================
+   Área de Mensagens
+========================== */
+
+#messages{
+
+    flex:1;
+
+    padding:20px;
+
+    overflow:auto;
+
+}
+
+
+
+/* ==========================
+   Mensagens
+========================== */
+
+.message{
+
+    padding:12px;
+
+    margin-bottom:10px;
+
+    border-radius:10px;
+
+}
+
+
+
+.message.draco{
+
+    background:#111827;
+
+}
+
+
+
+/* ==========================
+   Área de Entrada
+========================== */
+
+#input-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:15px;
+
+}
+
+
+
+/* ==========================
+   Campo de Texto
+========================== */
+
+#user-input{
+
+    flex:1;
+
+    height:46px;
+
+    padding:0 15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:15px;
+
+}
+
+
+
+/* ==========================
+   Botões
+========================== */
+
+#voice-button,
+
+#send-button{
+
+    height:46px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+
+}
+
+
+
+/* ==========================
+   Botão de Voz
+========================== */
+
+#voice-button{
+
+    width:46px;
+
+    font-size:20px;
+
+}
+
+
+
+/* ==========================
+   Botão Enviar
+========================== */
+
+#send-button{
+
+    padding:0 18px;
+
+}
+
+
+
+/* ==========================
+   Hover
+========================== */
+
+#voice-button:hover,
+
+#send-button:hover{
+
+    transform:scale(1.05);
+
+}

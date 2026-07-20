@@ -1,0 +1,314 @@
+/**
+ * Draco AI
+ * Avatar Visual
+ *
+ * Controla aparência e animações
+ * do avatar do Draco AI
+ */
+
+
+/* ==========================
+   Container Principal
+========================== */
+
+#draco-core{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:20px;
+
+    width:320px;
+
+    min-height:380px;
+
+    transition:all .5s ease;
+
+}
+
+
+/* ==========================
+   Avatar SVG
+========================== */
+
+#draco-avatar-container{
+
+    width:260px;
+
+    height:260px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    user-select:none;
+
+    pointer-events:none;
+
+    transition:
+        transform .5s ease,
+        filter .5s ease;
+
+    filter:
+        drop-shadow(0 0 20px #38bdf8);
+
+}
+
+
+/* ==========================
+   Texto de Status
+========================== */
+
+#draco-status{
+
+    color:#7dd3fc;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    text-align:center;
+
+    transition:all .4s ease;
+
+}
+
+
+/* ==========================
+   Estado IDLE
+========================== */
+
+.draco-idle #draco-avatar-container{
+
+    animation:idlePulse 4s infinite;
+
+    filter:
+        drop-shadow(0 0 20px #38bdf8);
+
+}
+
+.draco-idle #draco-status{
+
+    color:#7dd3fc;
+
+}
+
+
+/* ==========================
+   Estado THINKING
+========================== */
+
+.draco-thinking #draco-avatar-container{
+
+    animation:thinkingPulse 1.5s infinite;
+
+    filter:
+        drop-shadow(0 0 35px #a855f7);
+
+}
+
+.draco-thinking #draco-status{
+
+    color:#d8b4fe;
+
+}
+
+
+/* ==========================
+   Estado SEARCHING MEMORY
+========================== */
+
+.draco-searching_memory #draco-avatar-container{
+
+    animation:memoryPulse 2s infinite;
+
+    filter:
+        drop-shadow(0 0 40px #22c55e);
+
+}
+
+.draco-searching_memory #draco-status{
+
+    color:#86efac;
+
+}
+
+
+/* ==========================
+   Estado ANSWERING
+========================== */
+
+.draco-answering #draco-avatar-container{
+
+    animation:answerPulse .8s infinite;
+
+    filter:
+        drop-shadow(0 0 45px #f59e0b);
+
+}
+
+.draco-answering #draco-status{
+
+    color:#fcd34d;
+
+}
+
+
+/* ==========================
+   Estado ERROR
+========================== */
+
+.draco-error #draco-avatar-container{
+
+    animation:errorPulse .6s infinite;
+
+    filter:
+        drop-shadow(0 0 45px #ef4444);
+
+}
+
+.draco-error #draco-status{
+
+    color:#fca5a5;
+
+}
+
+
+/* ==========================
+   Animações
+========================== */
+
+@keyframes idlePulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.03);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+@keyframes thinkingPulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.07);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+@keyframes memoryPulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+@keyframes answerPulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.10);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+@keyframes errorPulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    25%{
+
+        transform:translateX(-4px);
+
+    }
+
+    50%{
+
+        transform:translateX(4px);
+
+    }
+
+    75%{
+
+        transform:translateX(-4px);
+
+    }
+
+    100%{
+
+        transform:translateX(0);
+
+    }
+
+}
