@@ -1,0 +1,3 @@
+Python é uma linguagem de programação de alto nível.
+
+Ela é muito utilizada em inteligência artificial, automação, análise de dados e desenvolvimento de sistemas.
