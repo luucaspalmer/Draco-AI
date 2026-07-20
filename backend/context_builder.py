@@ -12,6 +12,10 @@ from backend.conversation_memory import (
     obter_historico
 )
 
+from backend.rag.rag_manager import (
+    rag_manager
+)
+
 
 # =====================================
 # Construção do contexto
@@ -60,7 +64,9 @@ def construir_contexto(pergunta, plano):
             {}
         )
 
-        resultado_memoria = buscar_memorias(pergunta) or {}
+        resultado_memoria = buscar_memorias(
+            pergunta
+        ) or {}
 
         contexto["memorias"] = resultado_memoria.get(
             "memoria",
@@ -147,11 +153,37 @@ def construir_contexto(pergunta, plano):
 
     if plano.get("usar_rag", False):
 
-        contexto["rag"] = []
+        try:
 
-        print("RAG: Ativado")
+            contexto_rag = rag_manager.buscar_contexto(
+                pergunta
+            )
+
+            contexto["rag"] = contexto_rag
+
+            print("\n====== DEBUG CONTEXT BUILDER RAG ======")
+            print(contexto["rag"])
+            print("=======================================\n")
+
+            if contexto_rag:
+
+                print("RAG: Contexto encontrado")
+
+            else:
+
+                print("RAG: Nenhum contexto encontrado")
+
+        except Exception as erro:
+
+            contexto["rag"] = ""
+
+            print(
+                f"RAG: Erro ({erro})"
+            )
 
     else:
+
+        contexto["rag"] = ""
 
         print("RAG: Desativado")
 

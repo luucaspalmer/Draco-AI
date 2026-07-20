@@ -42,6 +42,32 @@ Data: 19/07/2026
 - Draco agora conversa por voz.
 
 
+=========================================
+DRACO AI v1.3
+=========================================
+Implementando o RAG no Draco AI, agora ele e capaz de analisar dados do banco de dados interno e usar como fonte principal para respostas.
+
+Novos recursos:
+
++ Implementado sistema RAG.
++ Criado banco vetorial com ChromaDB.
++ Adicionado sistema de embeddings.
++ Implementado Retriever de conhecimento.
++ Criado RAG Manager.
++ Integração completa com Context Builder.
++ Integração com Prompt Builder.
++ Draco agora consulta conhecimento próprio
+  antes do modelo Qwen.
+
+Memória:
+
++ Melhorada recuperação de informações pessoais.
++ Draco consegue armazenar preferências do usuário.
++ Draco utiliza memórias aprendidas durante conversas.
+
+
+
+
 
 
 

@@ -1,5 +1,7 @@
-O Draco AI é um assistente pessoal criado por Lucas Palmer.
+Projeto Eclipse
 
-Seu objetivo é auxiliar aprendizado, criação, organização, desenvolvimento de projetos e evolução pessoal.
+O Projeto Eclipse é um protocolo interno do Draco AI.
 
-O Draco possui memória, personalidade, sistema de voz e utiliza inteligência artificial local.
+Ele sincroniza todos os módulos cognitivos do assistente.
+
+Esse projeto ainda está em desenvolvimento.

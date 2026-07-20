@@ -12,5 +12,15 @@
         "confianca": 0.9,
         "criado_em": "2026-07-17 21:17:10",
         "atualizado_em": "2026-07-17 21:17:10"
+    },
+    "interesses": {
+        "valor": [
+            "mexer com o mercado de apostas e esportivas"
+        ],
+        "importancia": 6,
+        "confianca": 0.9,
+        "criado_em": "2026-07-20 20:11:43",
+        "atualizado_em": "2026-07-20 20:11:43",
+        "origem": "usuario"
     }
 }

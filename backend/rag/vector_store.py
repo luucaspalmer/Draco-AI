@@ -1,9 +1,39 @@
+"""
+=====================================
+Draco AI
+Vector Store
+=====================================
+
+Responsável pelo armazenamento
+do conhecimento vetorial no ChromaDB.
+
+Fluxo:
+
+Documentos
+    ↓
+Embeddings
+    ↓
+ChromaDB
+
+Modo atual:
+- Reconstrói a base automaticamente
+- Remove duplicatas
+- Mantém sincronização com arquivos
+"""
+
 from pathlib import Path
 
 import chromadb
-from sentence_transformers import SentenceTransformer
 
-from backend.rag.document_loader import carregar_documentos
+
+from backend.rag.document_loader import (
+    carregar_documentos
+)
+
+
+from backend.rag.embeddings import (
+    gerar_embedding
+)
 
 
 
@@ -16,16 +46,8 @@ VECTOR_DB_PATH = Path(
 )
 
 
-COLLECTION_NAME = "draco_knowledge"
-
-
-
-# =====================================
-# Modelo de embedding
-# =====================================
-
-embedding_model = SentenceTransformer(
-    "all-MiniLM-L6-v2"
+COLLECTION_NAME = (
+    "draco_knowledge"
 )
 
 
@@ -39,62 +61,128 @@ client = chromadb.PersistentClient(
 )
 
 
-collection = client.get_or_create_collection(
-    name=COLLECTION_NAME
-)
+
+# =====================================
+# Criar / recriar coleção
+# =====================================
+
+def criar_collection():
+
+    try:
+
+        client.delete_collection(
+            name=COLLECTION_NAME
+        )
+
+        print(
+            "Coleção antiga removida"
+        )
+
+
+    except Exception:
+
+        pass
+
+
+
+    collection = client.create_collection(
+        name=COLLECTION_NAME
+    )
+
+
+    print(
+        "Nova coleção criada"
+    )
+
+
+    return collection
 
 
 
 # =====================================
-# Adicionar documentos
+# Indexar documentos
 # =====================================
 
 def adicionar_documentos():
+
+
+    collection = criar_collection()
+
 
     documentos = carregar_documentos()
 
 
     textos = []
+
     ids = []
+
     embeddings = []
+
     metadados = []
 
 
-    for index, doc in enumerate(documentos):
+
+    for doc in documentos:
+
+
+        nome = doc["nome"]
 
         texto = doc["texto"]
 
 
-        vetor = embedding_model.encode(
-            texto
-        ).tolist()
 
-
-        textos.append(texto)
-
-        embeddings.append(vetor)
-
-        ids.append(
-            str(index)
+        print(
+            f"Indexando: {nome}"
         )
+
+
+
+        vetor = gerar_embedding(
+            texto
+        )
+
+
+
+        textos.append(
+            texto
+        )
+
+
+        embeddings.append(
+            vetor
+        )
+
+
+        # ID estável baseado no arquivo
+        ids.append(
+            nome
+        )
+
 
         metadados.append(
             {
-                "origem": doc["nome"]
+                "origem": nome
             }
         )
 
 
+
     collection.add(
+
         documents=textos,
+
         embeddings=embeddings,
+
         ids=ids,
+
         metadatas=metadados
+
     )
 
 
+
     print(
-        f"{len(textos)} documentos adicionados ao Draco"
+        f"\n{len(textos)} documentos adicionados ao Draco"
     )
 
 

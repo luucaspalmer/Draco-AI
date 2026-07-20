@@ -1,7 +1,20 @@
+"""
+Draco AI
+Retriever
+
+Responsável por buscar conhecimento
+semântico no banco vetorial.
+"""
+
+
 from pathlib import Path
 
 import chromadb
-from sentence_transformers import SentenceTransformer
+
+
+from backend.rag.embeddings import (
+    gerar_embedding
+)
 
 
 
@@ -19,17 +32,7 @@ COLLECTION_NAME = "draco_knowledge"
 
 
 # =====================================
-# Modelo de embeddings
-# =====================================
-
-embedding_model = SentenceTransformer(
-    "all-MiniLM-L6-v2"
-)
-
-
-
-# =====================================
-# Conectar ao banco
+# Conectar ao banco vetorial
 # =====================================
 
 client = chromadb.PersistentClient(
@@ -52,9 +55,10 @@ def buscar_conhecimento(
     quantidade=3
 ):
 
-    vetor_pergunta = embedding_model.encode(
+    # Transformar pergunta em vetor
+    vetor_pergunta = gerar_embedding(
         pergunta
-    ).tolist()
+    )
 
 
     resultado = collection.query(
@@ -92,7 +96,7 @@ if __name__ == "__main__":
 
 
     pergunta = (
-        "O que é Python?"
+        "O que é o Projeto Eclipse?"
     )
 
 
@@ -117,6 +121,7 @@ if __name__ == "__main__":
         print(
             item["texto"]
         )
+
 
         print(
             "-" * 50
