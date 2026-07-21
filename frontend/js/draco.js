@@ -195,7 +195,7 @@ const Draco = {
 
             SEARCHING_MEMORY:
 
-            "Draco esta pensando...",
+            "Pensando...",
 
 
 

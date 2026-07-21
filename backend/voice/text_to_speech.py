@@ -27,7 +27,7 @@ class TextToSpeech:
         self.voice_model = (
             self.piper_dir
             / "voices"
-            / "pt_BR-edresson-low.onnx"
+            / "pt_BR-faber-medium.onnx"
         )
 
         # Pasta de saída
