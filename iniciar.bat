@@ -30,7 +30,7 @@ start "Draco API" cmd /k "cd /d D:\Draco AI && call .venv\Scripts\activate && uv
 
 echo.
 echo Aguardando API iniciar...
-timeout /t 30 >nul
+timeout /t 27 >nul
 
 
 

@@ -1,7 +1,0 @@
-Projeto Eclipse
-
-O Projeto Eclipse é um protocolo interno do Draco AI.
-
-Ele sincroniza todos os módulos cognitivos do assistente.
-
-Esse projeto ainda está em desenvolvimento.

@@ -13,7 +13,7 @@ Criador:
 Lucas Rafael Palmer da Silva.
 
 Objetivo:
-Produzir músicas autorais utilizando inteligência artificial.
+Produzir músicas autorais.
 
 História:
 O projeto Jhoricka foi criado para publicar músicas e experimentar
@@ -32,26 +32,6 @@ Características:
 Situação atual:
 O projeto encontra-se parado, mas pode voltar a receber novos lançamentos.
 
-Relacionamento com Draco AI:
-Jhoricka foi um dos projetos pessoais criados por Lucas antes do desenvolvimento do Draco AI.
-
 Curiosidades:
 - O canal representa uma fase criativa do Lucas.
 - O aprendizado adquirido durante o projeto ajudou na criação de outros projetos de IA.
-
-Perguntas que este documento responde:
-
-P: O que é o Jhoricka?
-R: É um canal de música criado por Lucas Rafael Palmer da Silva.
-
-P: Quem criou o Jhoricka?
-R: Lucas Rafael Palmer da Silva.
-
-P: Qual é o objetivo do Jhoricka?
-R: Produzir músicas autorais utilizando inteligência artificial.
-
-P: O projeto ainda existe?
-R: Sim, porém está inativo no momento.
-
-P: Qual a relação entre Jhoricka e Draco AI?
-R: O Jhoricka foi um projeto anterior que contribuiu para a experiência do Lucas antes do desenvolvimento do Draco AI.

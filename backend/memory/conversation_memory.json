@@ -2,7 +2,23 @@
     "history": [
         {
             "role": "user",
-            "content": "Me explica o que é interlizei artificial."
+            "content": "Jhoricka"
+        },
+        {
+            "role": "assistant",
+            "content": "Jhoricka é o nome dado ao assistente digital chamado Draco AI, que sou eu. Como criador de Jhoricka/Lucas Palmer, meu principal objetivo é auxiliar e fornecer informações de forma eficiente e precisa para os usuários."
+        },
+        {
+            "role": "user",
+            "content": "Quem é Thalion ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Meu nome é Draco. Sou um Dragão Guardião do Conhecimento."
+        },
+        {
+            "role": "user",
+            "content": "Thalion"
         },
         {
             "role": "assistant",
@@ -10,35 +26,19 @@
         },
         {
             "role": "user",
-            "content": "Me explique o que é tesoura."
+            "content": "Quem é Aldorion ?"
         },
         {
             "role": "assistant",
-            "content": "Desculpe, mas não tenho informações suficientes sobre a questão da \"tesoura\". Este objeto geralmente refere-se a um instrumento feito de madeira ou plástico com uma gaveta no meio e duas pinças nas extremidades, usado principalmente para segurar papel. No contexto de jogos ou brincadeiras, a tesoura é frequentemente usada em competições de forças entre três elementos: tesoura, papel e pedra. Você gostaria de saber mais sobre esse jogo específico?"
+            "content": "Aldorion era um dragão ancestral conhecido como o Dragão da Sabedoria Profunda. Ele dedicou milhares de anos ao estudo das estrelas, ciências antigas e aos registros deixados pelos primeiros povos."
         },
         {
             "role": "user",
-            "content": "Me explique o que é caneta."
+            "content": "Quantos anos tem Draco ?"
         },
         {
             "role": "assistant",
-            "content": "Um caneta, em sua forma mais simples, é um instrumento de escrita que consiste basicamente num penetro-capa com uma ponta afiada e resistente para preenchimento por tinta ou óleo através de um tubo central conhecido como \"caneca\". Elas são utilizadas em várias situações dianteiras, desde a redação de cartões postais até o desenvolvimento de documentos formais. Há uma variedade de canetas disponíveis atualmente, incluindo canetas pontas largas, canetas de tinta, marcadores e canetas de óleo ou gel."
-        },
-        {
-            "role": "user",
-            "content": "Me explique o que é o diórica."
-        },
-        {
-            "role": "assistant",
-            "content": "Desculpe, mas eu não tenho informações sobre um projeto ou termo chamado \"diórica\". Essa informação não está relacionada com nenhum dos conhecimentos recuperados do RAG que foram fornecidos. Portanto, não consigo fornecer nenhuma resposta a essa pergunta."
-        },
-        {
-            "role": "user",
-            "content": "Me explique o que é um celular."
-        },
-        {
-            "role": "assistant",
-            "content": "Obrigado pela pergunta, mas ela parece estar fora do contexto do nosso conhecimento atual. Nós temos informações sobre o Draco AI e projetos relacionados a ele, como o Jhoricka, bem como conhecimentos recuperados através do RAG. No entanto, não possuímos nenhum conhecimento específico sobre um celular ou os dispositivos móveis. Para uma resposta mais precisa, você poderia fornecer mais contexto para que eu possa atendê-lo melhor dentro da base de conhecimento disponível."
+            "content": "Aldorion, um dragão ancestral conhecido como o Dragão da Sabedoria Profunda, dedicou milhares de anos ao estudo das estrelas, ciências antigas e aos registros deixados pelos primeiros povos. Ele não menciona especificamente quantos anos Draco tem."
         }
     ]
 }

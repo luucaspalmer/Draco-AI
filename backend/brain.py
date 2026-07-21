@@ -15,6 +15,48 @@ from backend.prompt_builder import construir_prompt
 from backend.context_manager import ContextManager
 
 
+# Question Analyzer
+
+from backend.question.question_analyzer import (
+    analyze_question
+)
+
+
+# Question Router
+
+from backend.question.question_router import (
+    route_question
+)
+
+
+# Question Dispatcher
+
+from backend.question.question_dispatcher import (
+    dispatch_question
+)
+
+
+# Question Executor
+
+from backend.question.question_executor import (
+    execute_question
+)
+
+
+# Entity Resolver
+
+from backend.question.entity_resolver import (
+    resolve_entity
+)
+
+
+# Entity Classifier
+
+from backend.question.entity_classifier import (
+    classify_entity
+)
+
+
 # Memória cognitiva
 
 from backend.memory.memory_detector import (
@@ -28,8 +70,6 @@ from backend.memory.memory_controller import processar_memoria
 # Raciocínio cognitivo
 
 from backend.memory.memory_reasoner import raciocinar
-
-
 
 
 
@@ -76,9 +116,6 @@ def aprender_durante_conversa(pergunta):
 
 
 
-
-
-
 # =====================================
 # Pensamento principal
 # =====================================
@@ -93,6 +130,163 @@ def pensar(pergunta):
     if not pergunta:
 
         return "Não recebi nenhuma mensagem."
+
+
+
+
+
+    # =====================================
+    # Question Analyzer
+    # =====================================
+
+
+    dados_pergunta = analyze_question(
+        pergunta
+    )
+
+
+    print("\n====== QUESTION ANALYZER ======")
+
+    print(dados_pergunta)
+
+    print("===============================\n")
+
+
+
+
+    # =====================================
+    # Entity Resolver
+    # =====================================
+
+
+    entidade_resolvida = resolve_entity(
+        dados_pergunta["entity"]
+    )
+
+
+    print("\n====== ENTITY RESOLVER ======")
+
+    print(entidade_resolvida)
+
+    print("=============================\n")
+
+
+
+
+
+# =====================================
+# Entity Classifier
+# =====================================
+
+
+    classificacao_entidade = classify_entity(
+        entidade_resolvida
+    )
+
+
+    print("\n====== ENTITY CLASSIFIER ======")
+
+    print(classificacao_entidade)
+
+    print("===============================\n")
+
+
+
+
+
+# =====================================
+# Question Router
+# =====================================
+
+
+    rota_pergunta = route_question(
+        dados_pergunta,
+        classificacao_entidade
+    )
+
+
+    print("\n====== QUESTION ROUTER ======")
+
+    print(rota_pergunta)
+
+    print("=============================\n")
+
+
+
+
+# =====================================
+# Question Dispatcher
+# =====================================
+
+    dispatcher = dispatch_question(
+        rota_pergunta
+    )
+
+    print("\n====== QUESTION DISPATCHER ======")
+
+    print(dispatcher)
+
+    print("=================================\n")
+
+
+# =====================================
+# Question Executor
+# =====================================
+
+    dados_pergunta["question"] = pergunta
+
+    executor = execute_question(
+        dispatcher,
+        dados_pergunta
+    )
+
+
+    print("\nRAG CONTEXT EXISTE?")
+    print(bool(executor.get("rag_context")))
+
+    print("HANDLED:")
+    print(executor.get("handled"))
+
+    print("RESPONSE:")
+    print(executor.get("response"))
+
+
+
+# =====================================
+# Inserir contexto RAG no contexto cognitivo
+# =====================================
+
+    if executor.get("rag_context"):
+
+        print("\n====== RAG CONTEXTO INSERIDO ======")
+
+        print(executor["rag_context"])
+
+        print("===================================\n")
+
+
+
+
+
+    # =====================================
+    # Resposta imediata
+    # =====================================
+
+    if executor["handled"]:
+
+        resposta = executor["response"]
+
+        adicionar_mensagem(
+            "user",
+            pergunta
+        )
+
+        adicionar_mensagem(
+            "assistant",
+            resposta
+        )
+
+        return resposta
 
 
 
@@ -174,6 +368,8 @@ def pensar(pergunta):
 
 
 
+
+
     # =====================================
     # Comandos diretos
     # =====================================
@@ -220,33 +416,63 @@ def pensar(pergunta):
 
 
 
+# =====================================
+# Comandos diretos
+# Bloqueia conflito com RAG
+# =====================================
+
 
     if intencao in comandos_diretos:
 
 
-        resposta = executar_comando(
-            intencao,
-            pergunta
-        )
+        # Se a pergunta foi direcionada para RAG,
+        # não permitir que identidade roube a resposta
+
+        if rota_pergunta.get("route") == "rag":
+
+            print(
+                "\n====== COMANDO BLOQUEADO PELO RAG ======"
+            )
+
+            print(
+                "Intenção:",
+                intencao
+            )
+
+            print(
+                "Motivo: pergunta possui conhecimento externo."
+            )
+
+            print(
+                "========================================\n"
+            )
 
 
-        if resposta:
+        else:
 
 
-            adicionar_mensagem(
-                "user",
+            resposta = executar_comando(
+                intencao,
                 pergunta
             )
 
 
-            adicionar_mensagem(
-                "assistant",
-                resposta
-            )
+            if resposta:
 
 
-            return resposta
+                adicionar_mensagem(
+                    "user",
+                    pergunta
+                )
 
+
+                adicionar_mensagem(
+                    "assistant",
+                    resposta
+                )
+
+
+                return resposta
 
 
 
@@ -264,14 +490,18 @@ def pensar(pergunta):
 
     plano_contexto = manager.decidir_contexto(
         pergunta,
-        intencao
+        intencao,
+        rota_pergunta
     )
 
 
 
     print("\n==============================")
+
     print("PLANO DE CONTEXTO")
+
     print("==============================")
+
 
 
     for chave, valor in plano_contexto.items():
@@ -282,6 +512,8 @@ def pensar(pergunta):
 
 
     print("==============================\n")
+
+
 
 
 
@@ -300,6 +532,41 @@ def pensar(pergunta):
     )
 
 
+
+
+    # =====================================
+    # Adicionar análise cognitiva
+    # =====================================
+
+
+    contexto[
+        "analise_pergunta"
+    ] = dados_pergunta
+
+
+    contexto[
+        "entidade_resolvida"
+    ] = entidade_resolvida
+
+    contexto[
+        "classificacao_entidade"
+    ] = classificacao_entidade
+
+
+    contexto[
+        "rota_pergunta"
+    ] = rota_pergunta
+
+
+
+    contexto[
+        "dispatcher"
+    ] = dispatcher
+
+
+    contexto[
+        "executor"
+    ] = executor
 
 
 
@@ -359,12 +626,13 @@ def pensar(pergunta):
 
 
 
-
-
-
     # =====================================
     # Construção do prompt
     # =====================================
+
+    if executor.get("rag_context"):
+
+        contexto["rag"] = executor["rag_context"]
 
 
     prompt = construir_prompt(
@@ -375,20 +643,19 @@ def pensar(pergunta):
 
 
 
-
-
     # =====================================
     # Resposta do modelo
     # =====================================
+
+    print("\n====== CHAMANDO QWEN ======")
+    print("Pergunta:", pergunta)
+    print("============================\n")
+
 
 
     resposta = perguntar_ao_qwen(
         prompt
     )
-
-
-
-
 
 
 

@@ -5,19 +5,29 @@ Context Manager
 Responsável por decidir quais tipos de contexto
 serão utilizados para responder uma pergunta.
 
-Nesta primeira versão ele NÃO busca memórias,
-NÃO consulta RAG e NÃO monta prompts.
-
-Sua única responsabilidade é gerar um plano
-de contexto para o cérebro do Draco.
+Agora também considera a rota cognitiva definida
+pelo Question Router.
 """
 
 
 class ContextManager:
 
-    def decidir_contexto(self, pergunta, intencao):
+    def decidir_contexto(
+        self,
+        pergunta,
+        intencao,
+        rota_pergunta=None
+    ):
 
         pergunta = pergunta.lower().strip()
+
+        rota = None
+
+        if rota_pergunta:
+
+            rota = rota_pergunta.get(
+                "route"
+            )
 
         plano = {
 
@@ -155,5 +165,45 @@ class ContextManager:
 
             plano["usar_rag"] = True
             plano["motivo"] = "Consulta de conhecimento"
+
+        # =====================================
+        # Ajustes baseados no Question Router
+        # =====================================
+
+        if rota == "identity":
+
+            plano["usar_identidade"] = True
+
+            plano["motivo"] = "Question Router → Identidade"
+
+        elif rota == "knowledge":
+
+            plano["usar_rag"] = True
+
+            plano["motivo"] = "Question Router → Conhecimento"
+
+        elif rota == "graph":
+
+            plano["usar_memoria"] = True
+
+            plano["motivo"] = "Question Router → Grafo de Memória"
+
+        elif rota == "rag":
+
+            plano["usar_rag"] = True
+
+            plano["motivo"] = "Question Router → RAG"
+
+        elif rota == "memory":
+
+            plano["usar_memoria"] = True
+
+            plano["motivo"] = "Question Router → Memória"
+
+        elif rota == "time":
+
+            plano["usar_rag"] = True
+
+            plano["motivo"] = "Question Router → Tempo"
 
         return plano
