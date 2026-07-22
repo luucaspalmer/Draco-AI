@@ -475,9 +475,11 @@ def detectar_conhecimentos(texto, memoria):
 
 def identificar_tipo_mensagem(texto):
 
+    texto = texto.lower().strip()
 
-    texto = texto.lower()
-
+    # =================================
+    # CONSULTAS DE MEMÓRIA
+    # =================================
 
     perguntas_usuario = [
 
@@ -493,19 +495,42 @@ def identificar_tipo_mensagem(texto):
 
         "qual minha idade",
 
-        "onde eu moro"
+        "onde eu moro",
+
+        "o que eu gosto",
+
+        "do que eu gosto",
+
+        "quais são meus interesses",
+
+        "quais meus interesses",
+
+        "quais são minhas preferências",
+
+        "o que você lembra sobre mim"
 
     ]
 
 
     for pergunta in perguntas_usuario:
 
-
         if pergunta in texto:
 
             return "CONSULTA_MEMORIA"
 
 
+    # =================================
+    # QUALQUER PERGUNTA
+    # =================================
+
+    if texto.endswith("?"):
+
+        return "CONVERSA"
+
+
+    # =================================
+    # AFIRMAÇÕES PARA APRENDER
+    # =================================
 
     afirmacoes = [
 
@@ -513,13 +538,21 @@ def identificar_tipo_mensagem(texto):
 
         "meu nome e",
 
+        "me chamo",
+
         "eu sou",
+
+        "tenho",
 
         "eu tenho",
 
-        "eu gosto",
+        "gosto de",
+
+        "eu gosto de",
 
         "moro em",
+
+        "sou de",
 
         "estou criando",
 
@@ -530,14 +563,12 @@ def identificar_tipo_mensagem(texto):
 
     for afirmacao in afirmacoes:
 
-
         if afirmacao in texto:
 
             return "APRENDER_MEMORIA"
 
 
-
-    return "CONVERSA"
+    return "CONVERSA"   
 
 
 
@@ -568,6 +599,11 @@ def remover_duplicados(lista):
 # =====================================
 
 def detectar_memoria(texto):
+
+    if isinstance(texto, dict):
+        texto = texto.get("texto", "")
+
+    texto = texto.strip()
 
 
     memoria = criar_memoria()

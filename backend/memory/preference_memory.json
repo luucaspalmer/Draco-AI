@@ -1,1 +1,12 @@
-{}
+{
+    "preferencias": {
+        "valor": [
+            "dragão"
+        ],
+        "importancia": 6,
+        "confianca": 0.9,
+        "criado_em": "2026-07-22 16:36:01",
+        "atualizado_em": "2026-07-22 16:36:01",
+        "origem": "usuario"
+    }
+}

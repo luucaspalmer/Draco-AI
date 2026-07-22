@@ -2,32 +2,27 @@
 Draco AI
 Question Executor
 
-Executa a decisão tomada pelo Question Dispatcher.
+Executa decisões cognitivas.
 
-Responsável por chamar os núcleos:
+Prioridade:
 
-- Identity
-- Memory
-- Graph
-- RAG
-- Knowledge
-- Qwen
+Tools
+Identity
+Memory
+Graph
+RAG
+Knowledge
+Qwen
 """
 
-
-# ==========================================================
-# Memória
-# ==========================================================
 
 from backend.memory.memory_search import (
     buscar_memorias
 )
 
-
-
-# ==========================================================
-# RAG
-# ==========================================================
+from backend.memory.memory_formatter import (
+    formatar_memoria
+)
 
 from backend.rag.rag_manager import (
     rag_manager
@@ -38,14 +33,51 @@ from backend.tools.tool_manager import (
 )
 
 
-# ==========================================================
-# Executor principal
-# ==========================================================
+
+# =====================================
+# Perguntas de memória
+# =====================================
+
+MEMORY_QUERY_WORDS = [
+
+    "meu nome",
+
+    "o que eu gosto",
+
+    "o que você lembra",
+
+    "quem sou eu",
+
+    "minhas informações",
+
+    "sobre mim"
+
+]
+
+
+
+def is_memory_question(text):
+
+    text = text.lower()
+
+    for item in MEMORY_QUERY_WORDS:
+
+        if item in text:
+
+            return True
+
+    return False
+
+
+
+# =====================================
+# Executor
+# =====================================
 
 def execute_question(
     dispatch_data: dict,
     question_data: dict = None
-) -> dict:
+):
 
 
     executor = dispatch_data.get(
@@ -54,36 +86,13 @@ def execute_question(
     )
 
 
-    route = dispatch_data.get(
-        "route",
-        "conversation"
-    )
-
-
-    module = dispatch_data.get(
-        "module",
-        "conversation"
-    )
-
-
-
     pergunta = ""
-
-    entity = ""
-
 
 
     if question_data:
 
-
         pergunta = question_data.get(
             "question",
-            ""
-        )
-
-
-        entity = question_data.get(
-            "entity",
             ""
         )
 
@@ -96,10 +105,6 @@ def execute_question(
 
         "executor": executor,
 
-        "module": module,
-
-        "route": route,
-
         "handled": False,
 
         "response": None,
@@ -110,46 +115,51 @@ def execute_question(
 
 
 
-
-
-    # ======================================================
-    # Identity
-    # ======================================================
-
-    if executor == "identity":
-
-        return result
-
-
-
-
-    # ======================================================
-    # Tools
-    # ======================================================
+    # =================================
+    # TOOL
+    # =================================
 
     if executor == "tool_manager":
 
-        try:
 
-            tool_name = dispatch_data.get(
-                "tool"
-            )
+        tool = dispatch_data.get(
+            "tool"
+        )
 
-            tool_manager = ToolManager()
 
-            resposta = tool_manager.execute(
-                tool_name
-            )
+        resposta = ToolManager().execute(
+            tool
+        )
 
-            if resposta:
 
-                result["handled"] = True
+        if resposta:
 
-                result["response"] = resposta
+            result["handled"] = True
 
-        except Exception as e:
+            result["response"] = resposta
 
-            result["error"] = str(e)
+
+        return result
+
+
+
+
+    # =================================
+    # IDENTITY
+    # =================================
+
+    if executor == "identity":
+
+
+        result["handled"] = True
+
+
+        result["response"] = (
+            "Meu nome é Draco. "
+            "Sou um Dragão Guardião do Conhecimento. "
+            "Fui criado por Lucas Palmer."
+        )
+
 
         return result
 
@@ -157,34 +167,37 @@ def execute_question(
 
 
 
+    # =================================
+    # MEMORY
+    # =================================
 
-    # ======================================================
-    # Memory
-    # ======================================================
 
-    if executor == "memory":
+    if executor == "memory" or is_memory_question(pergunta):
 
 
         try:
 
 
             memoria = buscar_memorias(
-                entity
+                "usuario"
             )
 
 
             if memoria:
 
 
+                texto = formatar_memoria(
+                    memoria
+                )
+
+
                 result["handled"] = True
 
-
-                result["response"] = memoria
+                result["response"] = texto
 
 
 
         except Exception as e:
-
 
             result["error"] = str(e)
 
@@ -196,40 +209,16 @@ def execute_question(
 
 
 
-
-
-    # ======================================================
-    # Memory Graph
-    # ======================================================
-
-    if executor == "graph":
-
-        return result
-
-
-
-
-
-
-
-    # ======================================================
-    # Knowledge
-    # ======================================================
-
-    if executor == "knowledge":
-
-        return result
-
-
-
-
-    # ======================================================
+    # =================================
     # RAG
-    # ======================================================
+    # =================================
+
 
     if executor == "rag":
 
+
         try:
+
 
             contexto = rag_manager.buscar_contexto(
                 pergunta
@@ -238,12 +227,16 @@ def execute_question(
 
             if contexto:
 
+
                 result["rag_context"] = contexto
+
 
 
         except Exception as e:
 
+
             result["error"] = str(e)
+
 
 
         return result
@@ -251,8 +244,5 @@ def execute_question(
 
 
 
-    # ======================================================
-    # Conversa / Qwen
-    # ======================================================
 
     return result

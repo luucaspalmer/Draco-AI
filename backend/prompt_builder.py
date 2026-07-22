@@ -363,5 +363,28 @@ Não explique seu funcionamento interno.
 
 
 
+
+
+
+        # =====================================
+    # DEBUG DO TAMANHO DO PROMPT
+    # =====================================
+
+    prompt_final = "\n".join(prompt)
+
+    print("\n====== DEBUG PROMPT ======")
+    print(f"Identidade: {len(str(identidade))} caracteres")
+    print(f"Personalidade: {len(str(personalidade))} caracteres")
+    print(f"Memórias: {len(str(memorias))} caracteres")
+    print(f"Histórico: {len(str(historico))} caracteres")
+    print(f"RAG: {len(str(rag))} caracteres")
+    print(f"Pergunta: {len(str(pergunta))} caracteres")
+    print(f"PROMPT FINAL: {len(prompt_final)} caracteres")
+    print("==========================\n")
+
+    return prompt_final
+
+
+
   
     return "\n".join(prompt)

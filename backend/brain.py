@@ -685,6 +685,11 @@ def pensar(pergunta):
     print("Pergunta:", pergunta)
     print("============================\n")
 
+    print("\n====== TAMANHO DO PROMPT ======")
+    print("Caracteres:", len(prompt))
+    print("Palavras:", len(prompt.split()))
+    print("===============================\n")
+
 
 
     resposta = perguntar_ao_qwen(

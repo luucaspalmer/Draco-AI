@@ -6,22 +6,15 @@ entre Draco AI e o modelo Qwen local.
 """
 
 import requests
+import json
 
 from .config import OLLAMA_MODEL
 
 
 
-# =====================================
-# Configuração
-# =====================================
-
 OLLAMA_URL = "http://localhost:11434/api/generate"
 
 
-
-# =====================================
-# Perguntar ao Qwen
-# =====================================
 
 def perguntar_ao_qwen(prompt):
 
@@ -31,13 +24,20 @@ def perguntar_ao_qwen(prompt):
 
     dados = {
 
+
         "model": OLLAMA_MODEL,
+
 
         "prompt": prompt,
 
-        "stream": False
+
+        "stream": True,
+
+
+        "keep_alive": "30m"
 
     }
+
 
 
     try:
@@ -49,6 +49,8 @@ def perguntar_ao_qwen(prompt):
 
             json=dados,
 
+            stream=True,
+
             timeout=120
 
         )
@@ -58,24 +60,45 @@ def perguntar_ao_qwen(prompt):
 
 
 
-        resultado = resposta.json()
+        texto_final = ""
 
 
 
-        if "response" in resultado:
+        for linha in resposta.iter_lines():
 
 
-            return resultado["response"]
+            if not linha:
+
+                continue
 
 
 
-        print(
-            "Resposta inesperada do Ollama:",
-            resultado
-        )
+            dados_linha = json.loads(
+
+                linha.decode("utf-8")
+
+            )
 
 
-        return "Não consegui interpretar a resposta do meu núcleo."
+
+            if "response" in dados_linha:
+
+
+                texto_final += dados_linha["response"]
+
+
+
+            if dados_linha.get(
+                "done",
+                False
+            ):
+
+                break
+
+
+
+        return texto_final.strip()
+
 
 
 
@@ -91,6 +114,7 @@ def perguntar_ao_qwen(prompt):
 
 
 
+
     except requests.exceptions.Timeout:
 
 
@@ -100,6 +124,7 @@ def perguntar_ao_qwen(prompt):
 
 
         return "Meu núcleo demorou muito para responder."
+
 
 
 

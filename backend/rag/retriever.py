@@ -52,7 +52,8 @@ collection = client.get_collection(
 
 def buscar_conhecimento(
     pergunta,
-    quantidade=3
+    quantidade=3,
+    limite_distancia=1.40
 ):
 
     # Transformar pergunta em vetor
@@ -72,19 +73,131 @@ def buscar_conhecimento(
     documentos = []
 
 
-    for i, texto in enumerate(
-        resultado["documents"][0]
-    ):
+    textos = resultado["documents"][0]
+
+    metadados = resultado["metadatas"][0]
+
+    distancias = resultado["distances"][0]
+
+
+
+    print("\n====== DISTÂNCIA DOS RESULTADOS ======")
+
+
+
+    for i, texto in enumerate(textos):
+
+
+        distancia = distancias[i]
+
+
+        print(
+            f"{i+1} - {metadados[i]} | Distância: {distancia:.4f}"
+        )
+
+
+        # =====================================
+        # Filtro de relevância
+        # =====================================
+
+        if distancia > limite_distancia:
+
+            print(
+                "Ignorado por baixa relevância"
+            )
+
+            continue
+
+
 
         documentos.append(
             {
                 "texto": texto,
-                "origem": resultado["metadatas"][0][i]
+                "origem": metadados[i],
+                "distancia": distancia
             }
         )
 
 
+
+    print(
+        "====================================\n"
+    )
+
+
+
+    # =====================================
+    # DEBUG TAMANHO DOS DOCUMENTOS
+    # =====================================
+
+    print("\n===== TAMANHO DOS DOCUMENTOS =====")
+
+    for i, doc in enumerate(documentos):
+
+        print(
+            f"Documento {i+1}: {len(doc['texto'])} caracteres"
+        )
+
+    print(
+        "===============================\n"
+    )
+
+
+
+    # =====================================
+    # DEBUG RESULTADOS FINAIS DO RAG
+    # =====================================
+
+    print("\n====== RESULTADOS DO RAG ======")
+
+
+    for i, doc in enumerate(documentos):
+
+        print(
+            f"\nCHUNK {i+1}"
+        )
+
+
+        print(
+            "Origem:",
+            doc["origem"]
+        )
+
+
+        print(
+            "Distância:",
+            round(
+                doc["distancia"],
+                4
+            )
+        )
+
+
+        print(
+            "Tamanho:",
+            len(doc["texto"]),
+            "caracteres"
+        )
+
+
+        print(
+            "-" * 50
+        )
+
+
+        print(
+            doc["texto"][:500]
+        )
+
+
+    print(
+        "===============================\n"
+    )
+
+
+
     return documentos
+
 
 
 
@@ -112,9 +225,16 @@ if __name__ == "__main__":
 
     for item in resultados:
 
+
         print(
             "Origem:",
             item["origem"]
+        )
+
+
+        print(
+            "Distância:",
+            item["distancia"]
         )
 
 

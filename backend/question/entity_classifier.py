@@ -2,92 +2,100 @@
 Draco AI
 Entity Classifier
 
-Responsável por classificar entidades encontradas
-pelo Entity Resolver.
+Classifica entidades encontradas pelo Entity Resolver.
 
-Transforma:
+Responsabilidade:
 
-"existe uma entidade chamada Aldorion"
+Resolver encontra:
+    Jhoricka
+    source: rag
 
-em:
+Classifier transforma:
 
-"tipo de entidade: personagem do universo Draco"
-"rota correta: RAG"
+    entity_type:
+        knowledge
 
-
-Exemplos:
-
-Draco
-→ system_identity
-→ identity
+    route:
+        rag
 
 
-Lucas
-→ user
-→ memory
+O classifier não deve limitar crescimento do Draco.
 
-
-Aldorion
-→ lore_character
-→ rag
-
-
-Python
-→ knowledge
-→ knowledge
+Ele deve confiar nas fontes:
+- internal
+- memory
+- rag
 """
 
 
 # ==========================================================
-# TIPOS DE ENTIDADE
+# ENTIDADES FIXAS IMPORTANTES
 # ==========================================================
 
 
-ENTITY_TYPES = {
+ENTITY_OVERRIDES = {
 
 
     "draco": {
 
-        "type": "system_identity",
+        "entity_type": "system_identity",
 
         "route": "identity",
 
-        "description": "Identidade principal do Draco AI"
+        "description":
+            "Identidade principal do Draco AI"
 
     },
 
 
     "lucas": {
 
-        "type": "user",
+        "entity_type": "user",
 
         "route": "memory",
 
-        "description": "Usuário principal do sistema"
+        "description":
+            "Usuário principal do Draco"
 
     },
 
 
-    "python": {
-
-        "type": "knowledge",
-
-        "route": "knowledge",
-
-        "description": "Conhecimento técnico"
-
-    },
+}
 
 
-    "aldorion": {
 
-        "type": "lore_character",
 
-        "route": "rag",
 
-        "description": "Personagem do universo Draco"
+# ==========================================================
+# MAPA DE ROTAS POR TIPO
+# ==========================================================
 
-    }
+
+TYPE_ROUTES = {
+
+
+    "system_identity":
+        "identity",
+
+
+    "user":
+        "memory",
+
+
+    "lore_character":
+        "rag",
+
+
+    "knowledge":
+        "rag",
+
+
+    "project":
+        "rag",
+
+
+    "unknown":
+        "knowledge"
 
 }
 
@@ -101,28 +109,6 @@ ENTITY_TYPES = {
 
 
 def classify_entity(entity_data: dict) -> dict:
-    """
-    Recebe:
-
-    {
-        "entity": "aldorion",
-        "exists": True,
-        "source": "memory"
-    }
-
-
-    Retorna:
-
-    {
-        "entity": "aldorion",
-        "exists": True,
-        "entity_type": "lore_character",
-        "route": "rag",
-        "source": "memory"
-    }
-
-    """
-
 
 
     entity = entity_data.get(
@@ -138,92 +124,26 @@ def classify_entity(entity_data: dict) -> dict:
     )
 
 
-
     source = entity_data.get(
-        "source",
-        None
+        "source"
+    )
+
+
+    resolver_type = entity_data.get(
+        "entity_type"
+    )
+
+
+
+    resolver_route = entity_data.get(
+        "route_hint"
     )
 
 
 
 
 
-    # ======================================================
-    # Entidade vazia
-    # ======================================================
-
-
-    if not entity:
-
-
-        return {
-
-
-            "entity": "",
-
-
-            "exists": False,
-
-
-            "entity_type": "unknown",
-
-
-            "route": "conversation",
-
-
-            "source": None
-
-
-        }
-
-
-
-
-
-    # ======================================================
-    # Entidade conhecida
-    # ======================================================
-
-
-    if entity in ENTITY_TYPES:
-
-
-        data = ENTITY_TYPES[entity]
-
-
-        return {
-
-
-            "entity": entity,
-
-
-            "exists": exists,
-
-
-            "entity_type": data["type"],
-
-
-            "route": data["route"],
-
-
-            "source": source,
-
-
-            "description": data["description"]
-
-
-        }
-
-
-
-
-
-    # ======================================================
-    # Entidade desconhecida
-    # ======================================================
-
-
-    return {
+    resultado = {
 
 
         "entity": entity,
@@ -241,7 +161,177 @@ def classify_entity(entity_data: dict) -> dict:
         "source": source,
 
 
-        "description": "Entidade sem classificação conhecida"
-
+        "description":
+            "Entidade classificada pelo Draco"
 
     }
+
+
+
+
+
+    # ======================================================
+    # Entidade vazia
+    # ======================================================
+
+
+    if not entity:
+
+
+        return resultado
+
+
+
+
+
+    # ======================================================
+    # Override interno
+    # ======================================================
+
+
+    if entity in ENTITY_OVERRIDES:
+
+
+        dados = ENTITY_OVERRIDES[entity]
+
+
+        resultado.update({
+
+            "entity_type":
+                dados["entity_type"],
+
+
+            "route":
+                dados["route"],
+
+
+            "description":
+                dados["description"]
+
+        })
+
+
+        return resultado
+
+
+
+
+
+    # ======================================================
+    # Respeitar Entity Resolver
+    # ======================================================
+
+
+    if resolver_type and resolver_type != "unknown":
+
+
+        resultado["entity_type"] = resolver_type
+
+
+
+        if resolver_route:
+
+            resultado["route"] = resolver_route
+
+
+        else:
+
+            resultado["route"] = TYPE_ROUTES.get(
+
+                resolver_type,
+
+                "knowledge"
+
+            )
+
+
+        resultado["description"] = (
+
+            "Classificação herdada do Entity Resolver"
+
+        )
+
+
+        return resultado
+
+
+
+
+
+    # ======================================================
+    # Inferência pela fonte
+    # ======================================================
+
+
+    if source == "rag":
+
+
+        resultado.update({
+
+            "entity_type":
+                "knowledge",
+
+            "route":
+                "rag",
+
+            "description":
+                "Entidade encontrada no conhecimento RAG"
+
+        })
+
+
+        return resultado
+
+
+
+
+
+    if source == "memory":
+
+
+        resultado.update({
+
+            "entity_type":
+                "user_memory",
+
+            "route":
+                "memory",
+
+            "description":
+                "Entidade encontrada na memória do usuário"
+
+        })
+
+
+        return resultado
+
+
+
+
+
+    if source == "internal":
+
+
+        resultado.update({
+
+            "entity_type":
+                "knowledge",
+
+            "route":
+                "knowledge"
+
+        })
+
+
+        return resultado
+
+
+
+
+
+    # ======================================================
+    # Desconhecida
+    # ======================================================
+
+
+    return resultado
