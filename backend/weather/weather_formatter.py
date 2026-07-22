@@ -37,6 +37,11 @@ class WeatherFormatter:
         )
 
 
+        print("\n===== WEATHER API =====")
+        print(current)
+        print("=======================\n")
+
+
         temperature = current.get(
             "temperature_2m",
             "desconhecida"
@@ -107,36 +112,36 @@ class WeatherFormatter:
         if precipitation > 0:
 
             rain_status = (
-                f" Há registro de precipitação "
-                f"de {precipitation} mm."
+                f"No momento, há precipitação registrada de "
+                f"{precipitation} mm."
             )
 
         else:
 
             rain_status = (
-                " Não há registro de chuva no momento."
+                " No momento, não há precipitação registrada pelos dados meteorológicos consultados."
             )
 
 
 
         return (
 
-            f"Consultei as condições meteorológicas de Araucária. "
+            f"Consultei as condições meteorológicas para Araucária. "
 
-            f"{period.capitalize()}, "
-            f"a temperatura é de {temperature}°C "
-            f"com sensação térmica de {feels_like}°C. "
+            f"{period.capitalize()}, a temperatura é de "
+            f"{temperature}°C, com sensação térmica de "
+            f"{feels_like}°C. "
 
-            f"A umidade relativa do ar está em "
-            f"{humidity}%. Condição atual: "
-            f"{weather_description}. "
+            f"O tempo está {weather_description}, "
+            f"com umidade relativa do ar em "
+            f"{humidity}%. "
 
-            f"Os ventos estão a "
-            f"{wind_speed} km/h "
-            f"(vindos do {wind_direction}). "
+            f"Os ventos sopram do "
+            f"{wind_direction} "
+            f"a {wind_speed} km/h. "
 
             f"A pressão atmosférica está em "
-            f"{pressure} hPa."
+            f"{pressure} hPa. "
 
             f"{rain_status}"
 

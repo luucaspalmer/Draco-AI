@@ -2,43 +2,43 @@
     "history": [
         {
             "role": "user",
-            "content": "Draco, qual o clima de agora?"
+            "content": "Qual o clima de hoje?"
         },
         {
             "role": "assistant",
-            "content": "Consultei as condições meteorológicas de Araucária. Neste momento à noite, a temperatura é de 18.1°C com sensação térmica de 16.6°C. A umidade relativa do ar está em 73%. Condição atual: encoberto. Os ventos estão a 17.0 km/h (vindos do norte). A pressão atmosférica está em 912.6 hPa. Não há registro de chuva no momento."
+            "content": "Consultei as condições meteorológicas de Araucária. Durante o dia, a temperatura é de 15.2°C com sensação térmica de 15.8°C. A umidade relativa do ar está em 97%. Condição atual: pancadas de chuva moderadas. Os ventos estão a 6.1 km/h (vindos do oeste). A pressão atmosférica está em 914.4 hPa. Há registro de precipitação de 0.9 mm."
         },
         {
             "role": "user",
-            "content": "Ola Draco, tudo bem ?"
+            "content": "Quem é a familia do Draco ?"
         },
         {
             "role": "assistant",
-            "content": "Seu nome é Lucas."
+            "content": "Desculpe, mas não tenho informações específicas sobre a família de um personagem chamado Draco. Eu sou Draco AI, o assistente inteligente criado pela equipe da Alibaba Cloud para fornecer ajuda e informações ao meu usuário. Não consigo fornecer detalhes sobre qualquer membro específico dessa pessoa."
         },
         {
             "role": "user",
-            "content": "Explique o que é  IA"
+            "content": "Qual o clima de hoje ?"
         },
         {
             "role": "assistant",
-            "content": "Inteligência Artificial (IA) é uma área de ciência da computação e engenharia onde se estuda a construção e o desenvolvimento de softwares e sistemas capazes de executar tarefas que normalmente exigem inteligência humana. A IA busca entender, processar e aprender do mundo ao seu redor, seja por meio de dados ou informações, e realizar uma determinada tarefa, como reconhecimento facial, tradução de idiomas, diagnóstico médico baseado em imagens médicas, etc."
+            "content": "Consultei o clima de Araucária. Durante o dia, faz 15.6°C, com sensação térmica de 16.5°C. O tempo está encoberto, com umidade relativa do ar em 97%. Os ventos sopram do noroeste a 5.2 km/h. A pressão atmosférica é de 915.1 hPa. Não há registro de chuva no momento."
         },
         {
             "role": "user",
-            "content": "Qual o clima de agora ?"
+            "content": "Como está o clima hoje?"
         },
         {
             "role": "assistant",
-            "content": "Consultei as condições meteorológicas de Araucária. Neste momento à noite, a temperatura é de 18.4°C com sensação térmica de 16.5°C. A umidade relativa do ar está em 69%. Condição atual: parcialmente nublado. Os ventos estão a 18.1 km/h (vindos do norte). A pressão atmosférica está em 911.7 hPa. Não há registro de chuva no momento."
+            "content": "Consultei o clima de Araucária. Durante o dia, faz 16.4°C, com sensação térmica de 16.9°C. O tempo está encoberto, com umidade relativa do ar em 93%. Os ventos sopram do leste a 8.9 km/h. A pressão atmosférica é de 915.5 hPa. Não há registro de chuva no momento."
         },
         {
             "role": "user",
-            "content": "Qual clima de agora?"
+            "content": "Como está o clima hoje?"
         },
         {
             "role": "assistant",
-            "content": "Consultei as condições meteorológicas de Araucária. Neste momento à noite, a temperatura é de 18.4°C com sensação térmica de 16.5°C. A umidade relativa do ar está em 69%. Condição atual: parcialmente nublado. Os ventos estão a 18.1 km/h (vindos do norte). A pressão atmosférica está em 911.7 hPa. Não há registro de chuva no momento."
+            "content": "Consultei as condições meteorológicas para Araucária (PR). Durante o dia, a temperatura é de 16.4°C, com sensação térmica de 16.9°C. O tempo está encoberto, com umidade relativa do ar em 93%. Os ventos sopram do leste a 8.9 km/h. A pressão atmosférica está em 915.5 hPa.  No momento, não há precipitação registrada pelos dados meteorológicos consultados."
         }
     ]
 }
