@@ -33,6 +33,9 @@ from backend.rag.rag_manager import (
     rag_manager
 )
 
+from backend.tools.tool_manager import (
+    ToolManager
+)
 
 
 # ==========================================================
@@ -114,6 +117,39 @@ def execute_question(
     # ======================================================
 
     if executor == "identity":
+
+        return result
+
+
+
+
+    # ======================================================
+    # Tools
+    # ======================================================
+
+    if executor == "tool_manager":
+
+        try:
+
+            tool_name = dispatch_data.get(
+                "tool"
+            )
+
+            tool_manager = ToolManager()
+
+            resposta = tool_manager.execute(
+                tool_name
+            )
+
+            if resposta:
+
+                result["handled"] = True
+
+                result["response"] = resposta
+
+        except Exception as e:
+
+            result["error"] = str(e)
 
         return result
 

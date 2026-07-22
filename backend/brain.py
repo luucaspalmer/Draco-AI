@@ -14,6 +14,8 @@ from backend.prompt_builder import construir_prompt
 
 from backend.context_manager import ContextManager
 
+from backend.tools.tool_manager import ToolManager
+
 
 # Question Analyzer
 
@@ -145,11 +147,50 @@ def pensar(pergunta):
     )
 
 
-    print("\n====== QUESTION ANALYZER ======")
 
-    print(dados_pergunta)
 
-    print("===============================\n")
+    # =====================================
+    # Verificação de ferramentas
+    # =====================================
+
+    tool_name = dados_pergunta.get(
+        "tool"
+    )
+
+
+    if tool_name:
+
+        print("\n====== TOOL DETECTADA ======")
+
+        print(tool_name)
+
+        print("============================\n")
+
+
+        tool_manager = ToolManager()
+
+
+        resposta_tool = tool_manager.execute(
+            tool_name
+        )
+
+
+        if resposta_tool:
+
+
+            adicionar_mensagem(
+                "user",
+                pergunta
+            )
+
+
+            adicionar_mensagem(
+                "assistant",
+                resposta_tool
+            )
+
+
+            return resposta_tool
 
 
 
@@ -494,13 +535,6 @@ def pensar(pergunta):
         rota_pergunta
     )
 
-
-
-    print("\n==============================")
-
-    print("PLANO DE CONTEXTO")
-
-    print("==============================")
 
 
 

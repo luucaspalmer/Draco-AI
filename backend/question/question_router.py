@@ -141,6 +141,16 @@ def route_question(
 
 
 
+    intent = question_data.get(
+    "intent",
+    "unknown"
+    )
+
+    tool = question_data.get(
+    "tool"
+    )
+
+
 
 
     # ======================================================
@@ -170,6 +180,30 @@ def route_question(
 
         }
 
+
+
+    # ======================================================
+    # Prioridade 0:
+    # Ferramentas
+    # ======================================================
+
+    if tool:
+
+        return {
+
+            "route": "tool",
+
+            "source": "tool_manager",
+
+            "tool": tool,
+
+            "intent": intent,
+
+            "question_type": question_type,
+
+            "entity": entity
+
+        }        
 
 
 

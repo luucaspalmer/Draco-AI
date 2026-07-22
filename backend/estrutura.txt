@@ -1,0 +1,199 @@
+Listagem de caminhos de pasta para o volume Disco Local
+O n£mero de s‚rie do volume ‚ 2295-2A40
+D:.
+³   brain.py
+³   commands.py
+³   config.py
+³   context_builder.py
+³   context_manager.py
+³   conversation_memory.py
+³   estrutura.txt
+³   identity.py
+³   intents.py
+³   intent_ai.py
+³   memory.py
+³   ollama_client.py
+³   personality.py
+³   prompt_builder.py
+³   responses.py
+³   test_question_analyzer.py
+³   test_tool_manager.py
+³   test_weather.py
+³   test_weather_tool.py
+³   __init__.py
+³   
+ÃÄÄÄmemory
+³   ³   conversation_memory.json
+³   ³   graph_query.py
+³   ³   graph_reasoner.py
+³   ³   knowledge_memory.json
+³   ³   memory_controller.py
+³   ³   memory_detector.py
+³   ³   memory_extractor.py
+³   ³   memory_formatter.py
+³   ³   memory_graph.py
+³   ³   memory_layers.py
+³   ³   memory_manager.py
+³   ³   memory_reasoner.py
+³   ³   memory_reasoning_rules.py
+³   ³   memory_search.py
+³   ³   memory_storage.py
+³   ³   memory_types.py
+³   ³   memory_validator.py
+³   ³   permanent_memory.json
+³   ³   preference_memory.json
+³   ³   project_memory.json
+³   ³   __init__.py
+³   ³   
+³   ÃÄÄÄdocs
+³   ³       current_architecture.md
+³   ³       
+³   ÀÄÄÄ__pycache__
+³           graph_query.cpython-312.pyc
+³           graph_reasoner.cpython-312.pyc
+³           memory_controller.cpython-312.pyc
+³           memory_controller.cpython-314.pyc
+³           memory_detector.cpython-312.pyc
+³           memory_detector.cpython-314.pyc
+³           memory_extractor.cpython-312.pyc
+³           memory_formatter.cpython-312.pyc
+³           memory_graph.cpython-312.pyc
+³           memory_layers.cpython-312.pyc
+³           memory_manager.cpython-312.pyc
+³           memory_manager.cpython-314.pyc
+³           memory_reasoner.cpython-312.pyc
+³           memory_reasoning_rules.cpython-312.pyc
+³           memory_search.cpython-312.pyc
+³           memory_types.cpython-312.pyc
+³           memory_validator.cpython-312.pyc
+³           __init__.cpython-312.pyc
+³           __init__.cpython-314.pyc
+³           
+ÃÄÄÄquestion
+³   ³   entity_classifier.py
+³   ³   entity_resolver.py
+³   ³   question_analyzer.py
+³   ³   question_dispatcher.py
+³   ³   question_executor.py
+³   ³   question_router.py
+³   ³   __init__.py
+³   ³   
+³   ÀÄÄÄ__pycache__
+³           entity_classifier.cpython-312.pyc
+³           entity_resolver.cpython-312.pyc
+³           question_analyzer.cpython-312.pyc
+³           question_dispatcher.cpython-312.pyc
+³           question_executor.cpython-312.pyc
+³           question_router.cpython-312.pyc
+³           __init__.cpython-312.pyc
+³           
+ÃÄÄÄrag
+³   ³   document_loader.py
+³   ³   embeddings.py
+³   ³   rag_context.py
+³   ³   rag_manager.py
+³   ³   retriever.py
+³   ³   test_rag.py
+³   ³   vector_store.py
+³   ³   __init__.py
+³   ³   
+³   ÀÄÄÄ__pycache__
+³           document_loader.cpython-312.pyc
+³           embeddings.cpython-312.pyc
+³           rag_context.cpython-312.pyc
+³           rag_manager.cpython-312.pyc
+³           retriever.cpython-312.pyc
+³           vector_store.cpython-312.pyc
+³           __init__.cpython-312.pyc
+³           
+ÃÄÄÄservices
+ÃÄÄÄtests
+³       test_entity_classifier.py
+³       test_entity_resolver.py
+³       test_question_dispatcher.py
+³       test_question_executor.py
+³       test_question_router.py
+³       test_rag_manager.py
+³       
+ÃÄÄÄtools
+³   ³   tool_manager.py
+³   ³   weather_tool.py
+³   ³   __init__.py
+³   ³   
+³   ÀÄÄÄ__pycache__
+³           tool_manager.cpython-312.pyc
+³           weather_tool.cpython-312.pyc
+³           __init__.cpython-312.pyc
+³           
+ÃÄÄÄvoice
+³   ³   audio_player.py
+³   ³   microphone.py
+³   ³   speech_to_text.py
+³   ³   text_to_speech.py
+³   ³   voice_manager.py
+³   ³   whisper_engine.py
+³   ³   __init__.py
+³   ³   
+³   ÃÄÄÄaudio
+³   ³       input.wav
+³   ³       input.webm
+³   ³       
+³   ÀÄÄÄ__pycache__
+³           audio_player.cpython-312.pyc
+³           microphone.cpython-312.pyc
+³           speech_to_text.cpython-312.pyc
+³           text_to_speech.cpython-312.pyc
+³           voice_manager.cpython-312.pyc
+³           __init__.cpython-312.pyc
+³           
+ÃÄÄÄweather
+³   ³   weather_formatter.py
+³   ³   weather_service.py
+³   ³   __init__.py
+³   ³   
+³   ÀÄÄÄ__pycache__
+³           weather_formatter.cpython-312.pyc
+³           weather_service.cpython-312.pyc
+³           __init__.cpython-312.pyc
+³           
+ÀÄÄÄ__pycache__
+        brain.cpython-312.pyc
+        brain.cpython-314.pyc
+        commands.cpython-312.pyc
+        commands.cpython-314.pyc
+        config.cpython-312.pyc
+        config.cpython-314.pyc
+        context_builder.cpython-312.pyc
+        context_builder.cpython-314.pyc
+        context_manager.cpython-312.pyc
+        conversation_memory.cpython-312.pyc
+        conversation_memory.cpython-314.pyc
+        identity.cpython-312.pyc
+        identity.cpython-314.pyc
+        intents.cpython-312.pyc
+        intents.cpython-314.pyc
+        intent_ai.cpython-312.pyc
+        intent_ai.cpython-314.pyc
+        main.cpython-312.pyc
+        main.cpython-314.pyc
+        memory.cpython-314.pyc
+        memory_controller.cpython-312.pyc
+        memory_detector.cpython-312.pyc
+        memory_extractor.cpython-312.pyc
+        memory_layers.cpython-312.pyc
+        memory_layers.cpython-314.pyc
+        memory_manager.cpython-312.pyc
+        memory_manager.cpython-314.pyc
+        memory_search.cpython-312.pyc
+        memory_search.cpython-314.pyc
+        memory_types.cpython-312.pyc
+        memory_types.cpython-314.pyc
+        memory_validator.cpython-312.pyc
+        ollama_client.cpython-312.pyc
+        ollama_client.cpython-314.pyc
+        personality.cpython-314.pyc
+        prompt_builder.cpython-312.pyc
+        prompt_builder.cpython-314.pyc
+        __init__.cpython-312.pyc
+        __init__.cpython-314.pyc
+        

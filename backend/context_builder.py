@@ -27,9 +27,6 @@ def construir_contexto(pergunta, plano):
         "pergunta": pergunta
     }
 
-    print("\n======================================")
-    print("CONTEXT BUILDER")
-    print("======================================")
 
     # =====================================
     # Identidade
@@ -161,9 +158,6 @@ def construir_contexto(pergunta, plano):
 
             contexto["rag"] = contexto_rag
 
-            print("\n====== DEBUG CONTEXT BUILDER RAG ======")
-            print(contexto["rag"])
-            print("=======================================\n")
 
             if contexto_rag:
 

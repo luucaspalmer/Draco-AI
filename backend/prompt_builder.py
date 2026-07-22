@@ -363,24 +363,5 @@ Não explique seu funcionamento interno.
 
 
 
-    # =====================================
-    # Debug
-    # =====================================
-
-    print(
-        "\n========= PROMPT BUILDER ========="
-    )
-
-
-    for linha in prompt:
-
-        print(linha)
-
-
-    print(
-        "==================================\n"
-    )
-
-
-
+  
     return "\n".join(prompt)

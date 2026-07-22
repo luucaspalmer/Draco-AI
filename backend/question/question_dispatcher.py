@@ -4,9 +4,6 @@ Question Dispatcher
 
 Responsável por decidir qual módulo do Draco
 deverá responder uma pergunta.
-
-Nesta primeira versão ele apenas define
-o executor responsável.
 """
 
 
@@ -24,7 +21,15 @@ def dispatch_question(route_data: dict) -> dict:
 
     }
 
-    if route == "identity":
+    if route == "tool":
+
+        dispatch["executor"] = "tool_manager"
+
+        dispatch["module"] = "tools"
+
+        dispatch["tool"] = route_data.get("tool")
+
+    elif route == "identity":
 
         dispatch["executor"] = "identity"
 
