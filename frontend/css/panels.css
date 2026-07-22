@@ -1,141 +1,148 @@
 /* ==========================
+   Rótulo do painel de chat
+========================== */
+
+#chat-container::before {
+    content: "LOG DE COMUNICAÇÃO";
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+    padding: 14px 20px 0;
+}
+
+/* ==========================
    Área de Mensagens
 ========================== */
 
-#messages{
-
-    flex:1;
-
-    padding:20px;
-
-    overflow:auto;
-
+#messages {
+    flex: 1;
+    padding: 16px 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
-
-
 
 /* ==========================
    Mensagens
 ========================== */
 
-.message{
-
-    padding:12px;
-
-    margin-bottom:10px;
-
-    border-radius:10px;
-
+.message {
+    position: relative;
+    max-width: 88%;
+    padding: 12px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+    animation: messageIn .25s ease;
 }
 
-
-
-.message.draco{
-
-    background:#111827;
-
+.message.draco {
+    align-self: flex-start;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-dim);
+    border-left: 2px solid var(--c-idle);
+    color: var(--text);
 }
 
+.message.usuario {
+    align-self: flex-end;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-right: 2px solid var(--c-idle);
+    color: var(--text);
+}
 
+@keyframes messageIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
 
 /* ==========================
    Área de Entrada
 ========================== */
 
-#input-area{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    padding:15px;
-
+#input-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 20px;
+    border-top: 1px solid var(--border-dim);
 }
-
-
 
 /* ==========================
    Campo de Texto
 ========================== */
 
-#user-input{
-
-    flex:1;
-
-    height:46px;
-
-    padding:0 15px;
-
-    border:none;
-
-    border-radius:10px;
-
-    outline:none;
-
-    font-size:15px;
-
+#user-input {
+    flex: 1;
+    height: 46px;
+    padding: 0 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-dim);
+    border-radius: 4px;
+    outline: none;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    transition: border-color .25s ease, box-shadow .25s ease;
 }
 
+#user-input::placeholder {
+    color: var(--text-muted);
+}
 
+#user-input:focus {
+    border-color: var(--c-idle);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
 
 /* ==========================
    Botões
 ========================== */
 
 #voice-button,
-
-#send-button{
-
-    height:46px;
-
-    border:none;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    transition:all .25s ease;
-
+#send-button {
+    height: 46px;
+    border: 1px solid var(--border-dim);
+    border-radius: 4px;
+    background: rgba(56, 189, 248, 0.06);
+    color: var(--text);
+    cursor: pointer;
+    font-family: var(--font-hud);
+    letter-spacing: 1px;
+    transition: all .25s ease;
 }
 
-
-
-/* ==========================
-   Botão de Voz
-========================== */
-
-#voice-button{
-
-    width:46px;
-
-    font-size:20px;
-
+#voice-button {
+    width: 46px;
+    font-size: 18px;
 }
 
-
-
-/* ==========================
-   Botão Enviar
-========================== */
-
-#send-button{
-
-    padding:0 18px;
-
+#send-button {
+    padding: 0 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: var(--c-idle);
 }
-
-
-
-/* ==========================
-   Hover
-========================== */
 
 #voice-button:hover,
+#send-button:hover {
+    border-color: var(--c-idle);
+    background: rgba(56, 189, 248, 0.14);
+    box-shadow: 0 0 14px -2px rgba(56, 189, 248, 0.5);
+}
 
-#send-button:hover{
+#voice-button.recording {
+    border-color: var(--c-error);
+    color: var(--c-error);
+    background: rgba(239, 68, 68, 0.12);
+    animation: recPulse 1s ease-in-out infinite;
+}
 
-    transform:scale(1.05);
-
+@keyframes recPulse {
+    0%, 100% { box-shadow: 0 0 6px -2px var(--c-error); }
+    50%      { box-shadow: 0 0 18px 0px var(--c-error); }
 }

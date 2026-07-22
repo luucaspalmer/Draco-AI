@@ -1,26 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap');
+
 * {
-
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+:root {
+    /* ==== Núcleo ==== */
+    --bg: #05070c;
+    --bg-panel: rgba(13, 18, 28, 0.55);
+    --bg-panel-solid: transparent;
+    --border-dim: rgba(56, 189, 248, 0.16);
+    --grid-line: rgba(56, 189, 248, 0.05);
 
+    /* ==== Estados (mesmo mapa usado em draco.js) ==== */
+    /* --c-idle: #38bdf8; */
+    --c-listening: #22d3ee;
+    --c-thinking: #a855f7;
+    --c-memory: #22c55e;
+    --c-speaking: #38bdf8;
+    --c-answering: #f59e0b;
+    --c-error: #ef4444;
+
+    --text: #e6f1ff;
+    --text-dim: #7dd3fc;
+    --text-muted: #64748b;
+
+    /* ==== Tipografia ==== */
+    --font-hud: 'Chakra Petch', sans-serif;
+    --font-body: 'Inter', Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
 
 body {
-
-    background:#080b12;
-    color:white;
-    font-family:Arial, sans-serif;
-
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    overflow: hidden;
 }
 
+/* ==========================
+   Fundo em grade + vinheta
+   (camada fixa atrás de tudo)
+========================== */
 
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 42px 42px;
+    animation: gridDrift 60s linear infinite;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 40%, transparent 0%, var(--bg) 85%);
+}
+
+@keyframes gridDrift {
+    0%   { background-position: 0 0, 0 0; }
+    100% { background-position: 42px 42px, 42px 42px; }
+}
 
 #app {
+    position: relative;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+}
 
-    width:100vw;
-    height:100vh;
+/* Utilitário de rótulo HUD reaproveitado nas outras folhas */
+.hud-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
 
+::selection {
+    background: var(--c-idle);
+    color: #05070c;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-dim);
+    border-radius: 3px;
 }

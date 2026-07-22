@@ -1,314 +1,223 @@
 /**
- * Draco AI
- * Avatar Visual
- *
- * Controla aparência e animações
- * do avatar do Draco AI
+ * Draco AI — Avatar Visual
+ * Moldura HUD ao redor do retrato (imagem) do Draco.
+ * Cada estado define --state-color; o resto herda dela.
  */
 
+#draco-core {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    width: 340px;
+    min-height: 400px;
+    --state-color: var(--c-idle);
+}
 
 /* ==========================
-   Container Principal
+   Selo de estado (texto pequeno acima do retrato)
 ========================== */
 
-#draco-core{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:20px;
-
-    width:320px;
-
-    min-height:380px;
-
-    transition:all .5s ease;
-
+#draco-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--state-color);
+    opacity: .75;
 }
-
 
 /* ==========================
-   Avatar SVG
+   Container do avatar
 ========================== */
 
-#draco-avatar-container{
-
-    width:260px;
-
-    height:260px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    user-select:none;
-
-    pointer-events:none;
-
-    transition:
-        transform .5s ease,
-        filter .5s ease;
-
-    filter:
-        drop-shadow(0 0 20px #38bdf8);
-
+#draco-avatar-container {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    user-select: none;
 }
 
+/* Anel giratório de varredura */
+.avatar-ring {
+    position: absolute;
+    inset: -14px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        var(--state-color) 22deg,
+        transparent 46deg,
+        transparent 180deg,
+        var(--state-color) 202deg,
+        transparent 226deg,
+        transparent 360deg
+    );
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+            mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+    filter: drop-shadow(0 0 6px var(--state-color));
+    animation: ringSpin 5s linear infinite;
+    transition: background .5s ease, filter .5s ease;
+}
+
+/* Anel fino estático, contraponto ao giratório */
+#draco-avatar-container::after {
+    content: "";
+    position: absolute;
+    inset: -24px;
+    border-radius: 50%;
+    border: 1px solid var(--border-dim);
+}
+
+/* Moldura octogonal com o retrato */
+.avatar-frame {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: var(--bg-panel-solid);
+    clip-path: polygon(
+        20% 0%, 80% 0%, 100% 20%, 100% 80%,
+        80% 100%, 20% 100%, 0% 80%, 0% 20%
+    );
+    box-shadow: 0 0 0 1px var(--state-color), 0 0 30px -6px var(--state-color);
+    transition: box-shadow .5s ease;
+}
+
+.avatar-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(1.05) contrast(1.05);
+    transition: filter .5s ease;
+}
+
+/* Faixa de varredura vertical sobre o retrato */
+.avatar-scan {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 45%;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        color-mix(in srgb, var(--state-color) 30%, transparent) 50%,
+        transparent 100%
+    );
+    animation: scanY 3.2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Cantos HUD do retrato (reaproveita layout.css) */
+.avatar-frame .corner-tl,
+.avatar-frame .corner-tr,
+.avatar-frame .corner-bl,
+.avatar-frame .corner-br {
+    border-color: var(--state-color);
+    width: 14px;
+    height: 14px;
+}
 
 /* ==========================
-   Texto de Status
+   Texto de status
 ========================== */
 
-#draco-status{
-
-    color:#7dd3fc;
-
-    font-size:18px;
-
-    font-weight:600;
-
-    letter-spacing:1px;
-
-    text-align:center;
-
-    transition:all .4s ease;
-
+#draco-status {
+    font-family: var(--font-hud);
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    color: var(--state-color);
+    text-transform: uppercase;
+    transition: color .4s ease;
 }
 
+#draco-status::after {
+    content: "";
+    display: block;
+    width: 34px;
+    height: 2px;
+    margin: 8px auto 0;
+    background: var(--state-color);
+    opacity: .6;
+}
 
 /* ==========================
-   Estado IDLE
+   Estados
+   (definem --state-color e ajustam ritmo/filtro)
 ========================== */
 
-.draco-idle #draco-avatar-container{
-
-    animation:idlePulse 4s infinite;
-
-    filter:
-        drop-shadow(0 0 20px #38bdf8);
-
+.draco-idle {
+    --state-color: var(--c-idle);
 }
 
-.draco-idle #draco-status{
-
-    color:#7dd3fc;
-
+.draco-listening {
+    --state-color: var(--c-listening);
 }
+.draco-listening .avatar-ring { animation-duration: 2.2s; }
+.draco-listening .avatar-frame img { filter: saturate(1.15) brightness(1.05); }
 
-
-/* ==========================
-   Estado THINKING
-========================== */
-
-.draco-thinking #draco-avatar-container{
-
-    animation:thinkingPulse 1.5s infinite;
-
-    filter:
-        drop-shadow(0 0 35px #a855f7);
-
+.draco-thinking {
+    --state-color: var(--c-thinking);
 }
+.draco-thinking .avatar-ring { animation-duration: 1.4s; }
+.draco-thinking #draco-avatar-container { animation: thinkingDrift 2s ease-in-out infinite; }
 
-.draco-thinking #draco-status{
-
-    color:#d8b4fe;
-
+.draco-searching_memory {
+    --state-color: var(--c-memory);
 }
+.draco-searching_memory .avatar-scan { animation-duration: 1.6s; }
 
-
-/* ==========================
-   Estado SEARCHING MEMORY
-========================== */
-
-.draco-searching_memory #draco-avatar-container{
-
-    animation:memoryPulse 2s infinite;
-
-    filter:
-        drop-shadow(0 0 40px #22c55e);
-
+.draco-speaking {
+    --state-color: var(--c-speaking);
 }
+.draco-speaking .avatar-frame img { filter: saturate(1.2) brightness(1.1); }
 
-.draco-searching_memory #draco-status{
-
-    color:#86efac;
-
+.draco-answering {
+    --state-color: var(--c-answering);
 }
+.draco-answering .avatar-ring { animation-duration: .9s; }
 
-
-/* ==========================
-   Estado ANSWERING
-========================== */
-
-.draco-answering #draco-avatar-container{
-
-    animation:answerPulse .8s infinite;
-
-    filter:
-        drop-shadow(0 0 45px #f59e0b);
-
+.draco-error {
+    --state-color: var(--c-error);
 }
-
-.draco-answering #draco-status{
-
-    color:#fcd34d;
-
-}
-
-
-/* ==========================
-   Estado ERROR
-========================== */
-
-.draco-error #draco-avatar-container{
-
-    animation:errorPulse .6s infinite;
-
-    filter:
-        drop-shadow(0 0 45px #ef4444);
-
-}
-
-.draco-error #draco-status{
-
-    color:#fca5a5;
-
-}
-
+.draco-error #draco-avatar-container { animation: errorShake .5s ease-in-out; }
+.draco-error .avatar-frame img { filter: saturate(1.3) contrast(1.2); }
 
 /* ==========================
    Animações
 ========================== */
 
-@keyframes idlePulse{
-
-    0%{
-
-        transform:scale(1);
-
-    }
-
-    50%{
-
-        transform:scale(1.03);
-
-    }
-
-    100%{
-
-        transform:scale(1);
-
-    }
-
+@keyframes ringSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
 }
 
-
-@keyframes thinkingPulse{
-
-    0%{
-
-        transform:scale(1);
-
-    }
-
-    50%{
-
-        transform:scale(1.07);
-
-    }
-
-    100%{
-
-        transform:scale(1);
-
-    }
-
+@keyframes scanY {
+    0%   { transform: translateY(-120%); opacity: 0; }
+    15%  { opacity: 1; }
+    85%  { opacity: 1; }
+    100% { transform: translateY(220%); opacity: 0; }
 }
 
-
-@keyframes memoryPulse{
-
-    0%{
-
-        transform:scale(1);
-
-    }
-
-    50%{
-
-        transform:scale(1.05);
-
-    }
-
-    100%{
-
-        transform:scale(1);
-
-    }
-
+@keyframes thinkingDrift {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.035); }
 }
 
-
-@keyframes answerPulse{
-
-    0%{
-
-        transform:scale(1);
-
-    }
-
-    50%{
-
-        transform:scale(1.10);
-
-    }
-
-    100%{
-
-        transform:scale(1);
-
-    }
-
+@keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    25%      { transform: translateX(-6px); }
+    75%      { transform: translateX(6px); }
 }
 
-
-@keyframes errorPulse{
-
-    0%{
-
-        transform:scale(1);
-
+@media (prefers-reduced-motion: reduce) {
+    .avatar-ring,
+    .avatar-scan,
+    #draco-avatar-container,
+    header::after {
+        animation: none !important;
     }
-
-    25%{
-
-        transform:translateX(-4px);
-
-    }
-
-    50%{
-
-        transform:translateX(4px);
-
-    }
-
-    75%{
-
-        transform:translateX(-4px);
-
-    }
-
-    100%{
-
-        transform:translateX(0);
-
-    }
-
 }

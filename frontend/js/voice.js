@@ -33,6 +33,8 @@ const Voice = {
 
     recording: false,
 
+    button: null,
+
 
 
     // =====================================
@@ -42,14 +44,14 @@ const Voice = {
     init() {
 
 
-        const button =
+        this.button =
             document.getElementById(
                 "voice-button"
             );
 
 
 
-        if (!button) {
+        if (!this.button) {
 
 
             console.warn(
@@ -64,7 +66,7 @@ const Voice = {
 
 
 
-        button.addEventListener(
+        this.button.addEventListener(
 
             "click",
 
@@ -254,6 +256,14 @@ const Voice = {
 
 
 
+            if(this.button){
+
+                this.button.classList.add("recording");
+
+            }
+
+
+
             console.log(
                 "Gravação iniciada."
             );
@@ -303,6 +313,14 @@ const Voice = {
 
 
         this.recording = false;
+
+
+
+        if(this.button){
+
+            this.button.classList.remove("recording");
+
+        }
 
 
 
@@ -504,7 +522,7 @@ const Voice = {
 
 
         div.className =
-            "message user";
+            "message usuario";
 
 
 
@@ -514,6 +532,11 @@ const Voice = {
 
 
         messages.appendChild(div);
+
+
+
+        messages.scrollTop =
+            messages.scrollHeight;
 
 
 
@@ -561,6 +584,11 @@ const Voice = {
 
 
         messages.appendChild(div);
+
+
+
+        messages.scrollTop =
+            messages.scrollHeight;
 
 
 

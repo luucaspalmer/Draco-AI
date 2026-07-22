@@ -2,43 +2,43 @@
     "history": [
         {
             "role": "user",
-            "content": "O que é paito?"
+            "content": "Draco, qual o clima de agora?"
         },
         {
             "role": "assistant",
-            "content": "Paito, conhecido também como pipoca de marrecos ou pipoca de aves, é uma bebida tradicional do Vietnã. Ela é feita principalmente com grãos amidosos (como arroz branca ou coco), água e açúcar em pequenas quantidades. Às vezes são adicionados ingredientes como canela e açúcar refinado para dar sabor ao paito. É um prato muito apreciado, especialmente durante festas e ocasiões especiais na cultura vietnamita."
+            "content": "Consultei as condições meteorológicas de Araucária. Neste momento à noite, a temperatura é de 18.1°C com sensação térmica de 16.6°C. A umidade relativa do ar está em 73%. Condição atual: encoberto. Os ventos estão a 17.0 km/h (vindos do norte). A pressão atmosférica está em 912.6 hPa. Não há registro de chuva no momento."
         },
         {
             "role": "user",
-            "content": "O que é python ?"
+            "content": "Ola Draco, tudo bem ?"
         },
         {
             "role": "assistant",
-            "content": "Python é uma linguagem de programação de alto nível muito utilizada em inteligência artificial, legal e bonita, automação, análise de dados e desenvolvimento de sistemas. Ele foi criado para facilitar a escrita de programas complexos ao mesmo tempo em que permite uma abordagem mais lenta (e detalhada) para o código."
+            "content": "Seu nome é Lucas."
         },
         {
             "role": "user",
-            "content": "Jhoricka"
+            "content": "Explique o que é  IA"
         },
         {
             "role": "assistant",
-            "content": "Desculpe, parece que houve um erro ao tentar entender sua pergunta. Não reconheci o nome \"Jhoricka\". Você pode estar se referindo a alguém ou algo específico? Por favor, informe-me e farei o possível para ajudar com sua informação."
+            "content": "Inteligência Artificial (IA) é uma área de ciência da computação e engenharia onde se estuda a construção e o desenvolvimento de softwares e sistemas capazes de executar tarefas que normalmente exigem inteligência humana. A IA busca entender, processar e aprender do mundo ao seu redor, seja por meio de dados ou informações, e realizar uma determinada tarefa, como reconhecimento facial, tradução de idiomas, diagnóstico médico baseado em imagens médicas, etc."
         },
         {
             "role": "user",
-            "content": "o que aconteceu no No ano celestial 3021 ?"
+            "content": "Qual o clima de agora ?"
         },
         {
             "role": "assistant",
-            "content": "Meu núcleo demorou muito para responder."
+            "content": "Consultei as condições meteorológicas de Araucária. Neste momento à noite, a temperatura é de 18.4°C com sensação térmica de 16.5°C. A umidade relativa do ar está em 69%. Condição atual: parcialmente nublado. Os ventos estão a 18.1 km/h (vindos do norte). A pressão atmosférica está em 911.7 hPa. Não há registro de chuva no momento."
         },
         {
             "role": "user",
-            "content": "Qual o clima de hoje ?"
+            "content": "Qual clima de agora?"
         },
         {
             "role": "assistant",
-            "content": "Consultei as condições meteorológicas de Araucária. Neste momento à noite, a temperatura é de 18.3°C com sensação térmica de 17.0°C. A umidade relativa do ar está em 73%. Condição atual: encoberto. Os ventos estão a 16.2 km/h (vindos do norte). A pressão atmosférica está em 913.0 hPa. Não há registro de chuva no momento."
+            "content": "Consultei as condições meteorológicas de Araucária. Neste momento à noite, a temperatura é de 18.4°C com sensação térmica de 16.5°C. A umidade relativa do ar está em 69%. Condição atual: parcialmente nublado. Os ventos estão a 18.1 km/h (vindos do norte). A pressão atmosférica está em 911.7 hPa. Não há registro de chuva no momento."
         }
     ]
 }

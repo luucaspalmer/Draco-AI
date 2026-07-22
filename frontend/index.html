@@ -1,403 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-
 <head>
 
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
     <title>Draco AI</title>
 
-
-
     <!-- CSS -->
-
     <link rel="stylesheet" href="css/style.css">
-
     <link rel="stylesheet" href="css/layout.css">
-
     <link rel="stylesheet" href="css/draco.css">
-
     <link rel="stylesheet" href="css/panels.css">
-
-
 
 </head>
 
-
-
 <body>
-
 
 <div id="app">
 
-
-
     <!-- Cabeçalho -->
-
     <header>
 
-
         <div>
-
-            <h1>
-                Draco AI
-            </h1>
-
-
-            <span>
-                Sistema Online
-            </span>
-
-
+            <h1>Draco AI</h1>
+            <span>Sistema Online</span>
         </div>
-
 
     </header>
 
-
-
-
-
     <main>
 
-
-
         <!-- Núcleo visual do Draco -->
-
         <section id="draco-container">
-
 
             <div id="draco-core" class="draco-idle">
 
-
+                <div id="draco-tag">Núcleo Visual · Draco</div>
 
                 <!-- Avatar -->
-
                 <div id="draco-avatar-container">
 
+                    <div class="avatar-ring"></div>
 
-                    <svg id="avatar"
-                        viewBox="0 0 300 320"
-                        width="230"
-                        height="245">
+                    <div class="avatar-frame hud-frame">
 
+                        <img
+                            id="avatar-img"
+                            src="assets/images/Draco 1.png"
+                            alt="Draco AI">
 
-                        <defs>
+                        <div class="avatar-scan"></div>
 
+                        <span class="corner-tl"></span>
+                        <span class="corner-tr"></span>
+                        <span class="corner-bl"></span>
+                        <span class="corner-br"></span>
 
-                            <radialGradient id="coreGlow">
-
-                                <stop offset="0%" stop-color="#ffffff"/>
-
-                                <stop offset="40%" stop-color="#38bdf8"/>
-
-                                <stop offset="100%" stop-color="#0369a1"/>
-
-                            </radialGradient>
-
-
-
-                            <linearGradient id="armor">
-
-                                <stop offset="0%" stop-color="#1e293b"/>
-
-                                <stop offset="100%" stop-color="#020617"/>
-
-                            </linearGradient>
-
-
-
-                            <filter id="glow">
-
-                                <feGaussianBlur
-                                    stdDeviation="4"
-                                    result="coloredBlur"/>
-
-                                <feMerge>
-
-                                    <feMergeNode in="coloredBlur"/>
-
-                                    <feMergeNode in="SourceGraphic"/>
-
-                                </feMerge>
-
-                            </filter>
-
-
-                        </defs>
-
-
-
-
-
-                        <!-- Cabeça do Draco -->
-
-
-                        <circle
-
-                            cx="150"
-
-                            cy="145"
-
-                            r="95"
-
-                            fill="url(#armor)"
-
-                            stroke="#38bdf8"
-
-                            stroke-width="5"
-
-                            filter="url(#glow)"/>
-
-
-
-
-
-                        <!-- Placa esquerda -->
-
-
-                        <path
-
-                            d="M60 140 L35 120 L55 180"
-
-                            fill="#0f172a"
-
-                            stroke="#38bdf8"
-
-                            stroke-width="4"/>
-
-
-
-
-
-                        <!-- Placa direita -->
-
-
-                        <path
-
-                            d="M240 140 L265 120 L245 180"
-
-                            fill="#0f172a"
-
-                            stroke="#38bdf8"
-
-                            stroke-width="4"/>
-
-
-
-
-
-                        <!-- Olho esquerdo -->
-
-
-                        <ellipse
-
-                            cx="110"
-
-                            cy="140"
-
-                            rx="18"
-
-                            ry="12"
-
-                            fill="#38bdf8"
-
-                            filter="url(#glow)"/>
-
-
-
-
-
-                        <!-- Olho direito -->
-
-
-                        <ellipse
-
-                            cx="190"
-
-                            cy="140"
-
-                            rx="18"
-
-                            ry="12"
-
-                            fill="#38bdf8"
-
-                            filter="url(#glow)"/>
-
-
-
-
-
-                        <!-- Pupilas -->
-
-
-                        <circle
-
-                            cx="110"
-
-                            cy="140"
-
-                            r="5"
-
-                            fill="#ffffff"/>
-
-
-
-                        <circle
-
-                            cx="190"
-
-                            cy="140"
-
-                            r="5"
-
-                            fill="#ffffff"/>
-
-
-
-
-
-                        <!-- Núcleo de energia -->
-
-
-                        <circle
-
-                            cx="150"
-
-                            cy="190"
-
-                            r="22"
-
-                            fill="url(#coreGlow)"
-
-                            filter="url(#glow)"/>
-
-
-
-
-
-                        <!-- Circuitos -->
-
-
-                        <path
-
-                            d="M150 80 V55"
-
-                            stroke="#38bdf8"
-
-                            stroke-width="4"/>
-
-
-
-                        <path
-
-                            d="M150 212 V235"
-
-                            stroke="#38bdf8"
-
-                            stroke-width="4"/>
-
-
-
-                        <path
-
-                            d="M70 190 H45"
-
-                            stroke="#38bdf8"
-
-                            stroke-width="4"/>
-
-
-
-                        <path
-
-                            d="M230 190 H255"
-
-                            stroke="#38bdf8"
-
-                            stroke-width="4"/>
-
-
-
-
-
-                        <!-- Interface de voz -->
-
-
-                        <path
-
-                            d="M110 220 Q150 240 190 220"
-
-                            fill="none"
-
-                            stroke="#38bdf8"
-
-                            stroke-width="4"/>
-
-
-
-                    </svg>
-
-
+                    </div>
 
                 </div>
 
-
-
-
-
-                <div id="draco-status">
-
-                    Draco Online
-
-                </div>
-
-
+                <div id="draco-status">Draco Online</div>
 
             </div>
-
-
 
         </section>
 
-
-
-
-
         <!-- Sistema de Chat -->
-
-
         <section id="chat-container">
-
-
 
             <div id="messages">
 
-
-
                 <div class="message draco">
-
-
                     Olá Lucas, sou o Draco.
-
-
                 </div>
 
-
-
             </div>
-
-
-
-
-
-
 
             <div id="input-area">
 
@@ -405,68 +85,27 @@
                     id="user-input"
                     type="text"
                     placeholder="Digite uma mensagem..."
-                    autocomplete="off"
-                >
+                    autocomplete="off">
 
-                <button
-                    id="voice-button"
-                    title="Conversar por voz">
+                <button id="voice-button" title="Conversar por voz">🎤</button>
 
-                    🎤
-
-                </button>
-
-                <button
-                    id="send-button">
-
-                    Enviar
-
-                </button>
+                <button id="send-button">Enviar</button>
 
             </div>
 
-
-
-
-
         </section>
-
-
-
-
 
     </main>
 
-
-
-
-
 </div>
 
-
-
-
-
-
-
 <!-- JavaScript -->
-
-
 <script src="js/api.js"></script>
-
 <script src="js/draco.js"></script>
-
 <script src="js/chat.js"></script>
-
 <script src="js/voice.js"></script>
-
 <script src="js/app.js"></script>
 
-
-
-
-
 </body>
-
 
 </html>

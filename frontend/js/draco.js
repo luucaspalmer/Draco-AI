@@ -19,6 +19,29 @@ const Draco = {
 
 
     // ==========================
+    // Imagens do avatar por estado
+    // Ajuste os caminhos/mapeamento
+    // conforme suas artes em
+    // assets/images/
+    // ==========================
+
+    imagens: {
+
+        IDLE:              "assets/images/Draco 1.png",
+        LISTENING:         "assets/images/Draco 1.png",
+        SEARCHING_MEMORY:  "assets/images/Draco 2.png",
+
+        THINKING:          "assets/images/Draco 2.png",
+        SPEAKING:          "assets/images/Draco 2.png",
+        ANSWERING:         "assets/images/Draco 2.png",
+
+        ERROR:             "assets/images/Draco 2.png"
+
+    },
+
+
+
+    // ==========================
     // Elementos interface
     // ==========================
 
@@ -27,6 +50,8 @@ const Draco = {
     status: null,
 
     avatar: null,
+
+    avatarImg: null,
 
 
 
@@ -55,6 +80,13 @@ const Draco = {
         this.avatar =
             document.getElementById(
                 "draco-avatar-container"
+            );
+
+
+
+        this.avatarImg =
+            document.getElementById(
+                "avatar-img"
             );
 
 
@@ -156,6 +188,58 @@ const Draco = {
 
 
         this.atualizarStatus();
+
+
+
+        this.atualizarImagem();
+
+
+
+    },
+
+
+
+    // ==========================
+    // Atualizar imagem do avatar
+    // ==========================
+
+    atualizarImagem() {
+
+
+
+        if (!this.avatarImg) {
+
+            return;
+
+        }
+
+
+
+        const novaImagem =
+
+            this.imagens[this.estadoAtual];
+
+
+
+        if (
+
+            novaImagem &&
+
+            !this.avatarImg.src.endsWith(
+
+                novaImagem.split("/").pop()
+
+            )
+
+        ) {
+
+
+
+            this.avatarImg.src = novaImagem;
+
+
+
+        }
 
 
 
