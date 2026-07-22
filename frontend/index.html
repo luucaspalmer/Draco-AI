@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
+
 <head>
+
 
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
     <title>Draco AI</title>
+
 
 
     <!-- CSS -->
@@ -21,7 +25,9 @@
     <link rel="stylesheet" href="css/panels.css">
 
 
+
 </head>
+
 
 
 <body>
@@ -30,9 +36,11 @@
 <div id="app">
 
 
+
     <!-- Cabeçalho -->
 
     <header>
+
 
         <div>
 
@@ -54,6 +62,7 @@
 
 
 
+
     <main>
 
 
@@ -66,11 +75,280 @@
             <div id="draco-core" class="draco-idle">
 
 
-                <!-- Avatar controlado pelo CSS/JS -->
+
+                <!-- Avatar -->
 
                 <div id="draco-avatar-container">
 
+
+                    <svg id="avatar"
+                        viewBox="0 0 300 320"
+                        width="230"
+                        height="245">
+
+
+                        <defs>
+
+
+                            <radialGradient id="coreGlow">
+
+                                <stop offset="0%" stop-color="#ffffff"/>
+
+                                <stop offset="40%" stop-color="#38bdf8"/>
+
+                                <stop offset="100%" stop-color="#0369a1"/>
+
+                            </radialGradient>
+
+
+
+                            <linearGradient id="armor">
+
+                                <stop offset="0%" stop-color="#1e293b"/>
+
+                                <stop offset="100%" stop-color="#020617"/>
+
+                            </linearGradient>
+
+
+
+                            <filter id="glow">
+
+                                <feGaussianBlur
+                                    stdDeviation="4"
+                                    result="coloredBlur"/>
+
+                                <feMerge>
+
+                                    <feMergeNode in="coloredBlur"/>
+
+                                    <feMergeNode in="SourceGraphic"/>
+
+                                </feMerge>
+
+                            </filter>
+
+
+                        </defs>
+
+
+
+
+
+                        <!-- Cabeça do Draco -->
+
+
+                        <circle
+
+                            cx="150"
+
+                            cy="145"
+
+                            r="95"
+
+                            fill="url(#armor)"
+
+                            stroke="#38bdf8"
+
+                            stroke-width="5"
+
+                            filter="url(#glow)"/>
+
+
+
+
+
+                        <!-- Placa esquerda -->
+
+
+                        <path
+
+                            d="M60 140 L35 120 L55 180"
+
+                            fill="#0f172a"
+
+                            stroke="#38bdf8"
+
+                            stroke-width="4"/>
+
+
+
+
+
+                        <!-- Placa direita -->
+
+
+                        <path
+
+                            d="M240 140 L265 120 L245 180"
+
+                            fill="#0f172a"
+
+                            stroke="#38bdf8"
+
+                            stroke-width="4"/>
+
+
+
+
+
+                        <!-- Olho esquerdo -->
+
+
+                        <ellipse
+
+                            cx="110"
+
+                            cy="140"
+
+                            rx="18"
+
+                            ry="12"
+
+                            fill="#38bdf8"
+
+                            filter="url(#glow)"/>
+
+
+
+
+
+                        <!-- Olho direito -->
+
+
+                        <ellipse
+
+                            cx="190"
+
+                            cy="140"
+
+                            rx="18"
+
+                            ry="12"
+
+                            fill="#38bdf8"
+
+                            filter="url(#glow)"/>
+
+
+
+
+
+                        <!-- Pupilas -->
+
+
+                        <circle
+
+                            cx="110"
+
+                            cy="140"
+
+                            r="5"
+
+                            fill="#ffffff"/>
+
+
+
+                        <circle
+
+                            cx="190"
+
+                            cy="140"
+
+                            r="5"
+
+                            fill="#ffffff"/>
+
+
+
+
+
+                        <!-- Núcleo de energia -->
+
+
+                        <circle
+
+                            cx="150"
+
+                            cy="190"
+
+                            r="22"
+
+                            fill="url(#coreGlow)"
+
+                            filter="url(#glow)"/>
+
+
+
+
+
+                        <!-- Circuitos -->
+
+
+                        <path
+
+                            d="M150 80 V55"
+
+                            stroke="#38bdf8"
+
+                            stroke-width="4"/>
+
+
+
+                        <path
+
+                            d="M150 212 V235"
+
+                            stroke="#38bdf8"
+
+                            stroke-width="4"/>
+
+
+
+                        <path
+
+                            d="M70 190 H45"
+
+                            stroke="#38bdf8"
+
+                            stroke-width="4"/>
+
+
+
+                        <path
+
+                            d="M230 190 H255"
+
+                            stroke="#38bdf8"
+
+                            stroke-width="4"/>
+
+
+
+
+
+                        <!-- Interface de voz -->
+
+
+                        <path
+
+                            d="M110 220 Q150 240 190 220"
+
+                            fill="none"
+
+                            stroke="#38bdf8"
+
+                            stroke-width="4"/>
+
+
+
+                    </svg>
+
+
+
                 </div>
+
+
 
 
 
@@ -92,8 +370,8 @@
 
 
 
-
         <!-- Sistema de Chat -->
+
 
         <section id="chat-container">
 
@@ -119,8 +397,9 @@
 
 
 
-            <div id="input-area">
 
+
+            <div id="input-area">
 
                 <input
                     id="user-input"
@@ -128,8 +407,6 @@
                     placeholder="Digite uma mensagem..."
                     autocomplete="off"
                 >
-
-
 
                 <button
                     id="voice-button"
@@ -139,9 +416,6 @@
 
                 </button>
 
-
-
-
                 <button
                     id="send-button">
 
@@ -149,9 +423,8 @@
 
                 </button>
 
-
-
             </div>
+
 
 
 
@@ -174,6 +447,8 @@
 
 
 
+
+
 <!-- JavaScript -->
 
 
@@ -186,6 +461,8 @@
 <script src="js/voice.js"></script>
 
 <script src="js/app.js"></script>
+
+
 
 
 
