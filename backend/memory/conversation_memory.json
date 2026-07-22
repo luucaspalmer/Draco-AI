@@ -2,14 +2,6 @@
     "history": [
         {
             "role": "user",
-            "content": "Draco, qual o clima de hoje?"
-        },
-        {
-            "role": "assistant",
-            "content": "Consultei as condições meteorológicas de Araucária. Neste momento à noite, a temperatura é de 18.5°C com sensação térmica de 17.2°C. A umidade relativa do ar está em 72%, condição atual: parcialmente nublado. Os ventos estão a 16.0 km/h (vindos do norte°). A pressão atmosférica está em 912.9 hPa. Não há registro de chuva no momento."
-        },
-        {
-            "role": "user",
             "content": "O que é paito?"
         },
         {
@@ -39,6 +31,14 @@
         {
             "role": "assistant",
             "content": "Meu núcleo demorou muito para responder."
+        },
+        {
+            "role": "user",
+            "content": "Qual o clima de hoje ?"
+        },
+        {
+            "role": "assistant",
+            "content": "Consultei as condições meteorológicas de Araucária. Neste momento à noite, a temperatura é de 18.3°C com sensação térmica de 17.0°C. A umidade relativa do ar está em 73%. Condição atual: encoberto. Os ventos estão a 16.2 km/h (vindos do norte). A pressão atmosférica está em 913.0 hPa. Não há registro de chuva no momento."
         }
     ]
 }
