@@ -1,0 +1,692 @@
+{
+    "eventos": [
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-22 17:33:20"
+        },
+        {
+            "pergunta": "Qual projeto eu estou desenvolvendo?",
+            "categoria": "projeto",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente"
+            ],
+            "origem": "regras",
+            "confianca": 0.67,
+            "timestamp": "2026-07-22 17:33:28"
+        },
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-22 17:54:41"
+        },
+        {
+            "pergunta": "Qual projeto estou desenvolvendo?",
+            "categoria": "projeto",
+            "chaves": [
+                "draco_ai"
+            ],
+            "origem": "teste",
+            "confianca": 1.0,
+            "timestamp": "2026-07-22 17:58:50"
+        },
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-22 19:34:54"
+        },
+        {
+            "pergunta": "Qual projeto estou desenvolvendo?",
+            "categoria": "projeto",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente"
+            ],
+            "origem": "regras",
+            "confianca": 0.67,
+            "timestamp": "2026-07-22 19:35:05"
+        },
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-22 19:47:18"
+        },
+        {
+            "pergunta": "Qual projeto estou desenvolvendo?",
+            "categoria": "projeto",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente"
+            ],
+            "origem": "regras",
+            "confianca": 0.67,
+            "timestamp": "2026-07-22 19:47:42"
+        },
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-22 19:49:32"
+        },
+        {
+            "pergunta": "machine learning",
+            "categoria": "conhecimento",
+            "chaves": [
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-23 09:58:26"
+        },
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-23 10:11:06"
+        },
+        {
+            "pergunta": "Me fala do projeto Jhoricka",
+            "categoria": "projeto",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-23 10:12:29"
+        },
+        {
+            "pergunta": "Me conta a historia do Draco",
+            "categoria": "geral",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome",
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente",
+                "preferencias",
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses",
+                "history"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-23 10:17:57"
+        },
+        {
+            "pergunta": "Me conta a historia do Draco",
+            "categoria": "geral",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome",
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente",
+                "preferencias",
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses",
+                "history"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-23 10:41:50"
+        },
+        {
+            "pergunta": "Oi Draco",
+            "categoria": "PERMANENTE",
+            "chaves": [
+                "nome",
+                "localizacao",
+                "idade"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 20:21:08"
+        },
+        {
+            "pergunta": "Oi Draco",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 20:21:28"
+        },
+        {
+            "pergunta": "Oi Draco",
+            "categoria": "PREFERENCIA",
+            "chaves": [
+                "preferencias"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 20:21:33"
+        },
+        {
+            "pergunta": "Oi Draco",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 20:21:52"
+        },
+        {
+            "pergunta": "Me conta a historia do Draco",
+            "categoria": "PERMANENTE",
+            "chaves": [
+                "nome",
+                "localizacao",
+                "idade"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 20:28:04"
+        },
+        {
+            "pergunta": "Me conta a historia do Draco",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 20:28:17"
+        },
+        {
+            "pergunta": "Me conta a historia do Draco",
+            "categoria": "PREFERENCIA",
+            "chaves": [
+                "preferencias"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 20:28:21"
+        },
+        {
+            "pergunta": "Me conta a historia do Draco",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 20:28:34"
+        },
+        {
+            "pergunta": "Oi Draco",
+            "categoria": "PERMANENTE",
+            "chaves": [
+                "nome",
+                "localizacao",
+                "idade"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 20:44:20"
+        },
+        {
+            "pergunta": "Oi Draco",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 20:44:38"
+        },
+        {
+            "pergunta": "Oi Draco",
+            "categoria": "PREFERENCIA",
+            "chaves": [
+                "preferencias"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 20:44:43"
+        },
+        {
+            "pergunta": "Oi Draco",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 20:44:58"
+        },
+        {
+            "pergunta": "Voce esta muito lento Draco",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 20:57:01"
+        },
+        {
+            "pergunta": "inteligencia artificial",
+            "categoria": "conhecimento",
+            "chaves": [
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-23 21:34:06"
+        },
+        {
+            "pergunta": "oi Draco",
+            "categoria": "PERMANENTE",
+            "chaves": [
+                "nome",
+                "localizacao",
+                "idade"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 21:44:32"
+        },
+        {
+            "pergunta": "oi Draco",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 21:44:43"
+        },
+        {
+            "pergunta": "oi Draco",
+            "categoria": "PREFERENCIA",
+            "chaves": [
+                "preferencias"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 21:44:47"
+        },
+        {
+            "pergunta": "oi Draco",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 21:44:59"
+        },
+        {
+            "pergunta": "inteligencia artificial",
+            "categoria": "conhecimento",
+            "chaves": [
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-23 21:56:20"
+        },
+        {
+            "pergunta": "teclado",
+            "categoria": "geral",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome",
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente",
+                "preferencias",
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses",
+                "history"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-23 22:05:59"
+        },
+        {
+            "pergunta": "teclado",
+            "categoria": "geral",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome",
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente",
+                "preferencias",
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses",
+                "history"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-23 22:09:47"
+        },
+        {
+            "pergunta": "O que é teclado ?",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 22:10:05"
+        },
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-23 22:29:49"
+        },
+        {
+            "pergunta": "Voce conhece o jogo Ragnarok ?",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-23 22:32:45"
+        },
+        {
+            "pergunta": "thalion",
+            "categoria": "geral",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome",
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente",
+                "preferencias",
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses",
+                "history"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-23 22:43:51"
+        },
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-23 22:43:51"
+        },
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-24 08:25:50"
+        },
+        {
+            "pergunta": "Quantos anos eu tenho?",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-24 08:26:47"
+        },
+        {
+            "pergunta": "Em que cidade eu moro?",
+            "categoria": "PERMANENTE",
+            "chaves": [
+                "nome",
+                "localizacao",
+                "idade"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-24 08:27:35"
+        },
+        {
+            "pergunta": "Qual é o meu objetivo profissional?",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-24 08:29:08"
+        },
+        {
+            "pergunta": "Sobre o que nós conversamos antes desta pergunta?",
+            "categoria": "PERMANENTE",
+            "chaves": [
+                "nome",
+                "localizacao",
+                "idade"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-24 08:31:10"
+        },
+        {
+            "pergunta": "Sobre o que nós conversamos antes desta pergunta?",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-24 08:31:23"
+        },
+        {
+            "pergunta": "Sobre o que nós conversamos antes desta pergunta?",
+            "categoria": "PREFERENCIA",
+            "chaves": [
+                "preferencias"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-24 08:31:28"
+        },
+        {
+            "pergunta": "Sobre o que nós conversamos antes desta pergunta?",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-24 08:31:42"
+        },
+        {
+            "pergunta": "Se eu quiser que o Draco fique duas vezes mais rápido, quais módulos provavelmente são os gargalos?",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-24 08:36:07"
+        },
+        {
+            "pergunta": "Se o RAG retornar cinco documentos pouco relevantes, o que você faria?",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-24 08:42:45"
+        },
+        {
+            "pergunta": "você",
+            "categoria": "conhecimento",
+            "chaves": [
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-24 08:49:08"
+        },
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-24 08:49:08"
+        },
+        {
+            "pergunta": "Estamos criando qual projeto?",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-24 09:03:16"
+        },
+        {
+            "pergunta": "Qual modelo usamos?",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-24 09:09:11"
+        },
+        {
+            "pergunta": "Explique detalhadamente como memória, RAG, histórico de conversa, personalidade, identidade e orquestrador trabalham juntos para responder uma pergunta",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-24 09:17:03"
+        }
+    ]
+}

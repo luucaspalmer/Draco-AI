@@ -41,11 +41,19 @@ class RAGManager:
     def buscar_contexto(
         self,
         pergunta,
-        limite=3
+        limite=3,
+        max_chars=700
     ):
         """
-        Retorna o contexto recuperado
-        da base vetorial.
+        Retorna o contexto recuperado da base vetorial.
+
+        Args:
+            pergunta: pergunta do usuário.
+            limite: quantidade máxima de chunks retornados.
+            max_chars: tamanho máximo (em caracteres) de
+                cada chunk incluído no contexto. Decidido
+                pelo Context Attention Manager de acordo
+                com a necessidade real da pergunta.
         """
 
         if not self.ativo:
@@ -54,7 +62,8 @@ class RAGManager:
 
         return construir_contexto_rag(
             pergunta,
-            limite
+            limite,
+            max_chars
         )
 
 

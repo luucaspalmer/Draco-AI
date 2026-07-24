@@ -7,6 +7,26 @@ import requests
 from backend.config import OLLAMA_MODEL
 
 
+# =====================================
+# Usage Logger (fase 2 - inteligência)
+#
+# Import protegido: se o módulo intelligence não
+# existir ainda no projeto, ou falhar por qualquer
+# motivo, o memory_search continua funcionando
+# exatamente como antes, sem log nenhum.
+# =====================================
+
+try:
+
+    from backend.intelligence.usage_logger import (
+        registrar_uso
+    )
+
+except Exception:
+
+    registrar_uso = None
+
+
 
 
 # =====================================
@@ -413,6 +433,37 @@ def buscar_contexto(categoria):
 
 
 # =====================================
+# Extrair chaves recuperadas
+#
+# Usado apenas para alimentar o log de
+# uso (fase 2). Não afeta o retorno de
+# buscar_memorias.
+# =====================================
+
+
+def _extrair_chaves_recuperadas(memoria_dict):
+
+    chaves = []
+
+
+    if not isinstance(memoria_dict, dict):
+
+        return chaves
+
+
+    for camada, dados in memoria_dict.items():
+
+        if isinstance(dados, dict):
+
+            chaves.extend(dados.keys())
+
+
+    return chaves
+
+
+
+
+# =====================================
 # Função principal
 # =====================================
 
@@ -426,6 +477,38 @@ def buscar_memorias(pergunta):
 
 
     categoria = analise["categoria"]
+
+
+    memoria = buscar_contexto(
+        categoria
+    )
+
+
+
+    # =================================
+    # Log de uso (fase 2)
+    #
+    # Não altera o comportamento nem o
+    # retorno desta função. Se o logger
+    # não existir ou falhar, é ignorado
+    # silenciosamente.
+    # =================================
+
+    if registrar_uso:
+
+        try:
+
+            registrar_uso(
+                pergunta=pergunta,
+                categoria=categoria,
+                chaves=_extrair_chaves_recuperadas(memoria),
+                origem=analise["origem"],
+                confianca=analise["confianca"]
+            )
+
+        except Exception:
+
+            pass
 
 
 
@@ -447,8 +530,6 @@ def buscar_memorias(pergunta):
 
         "memoria":
 
-            buscar_contexto(
-                categoria
-            )
+            memoria
 
     }

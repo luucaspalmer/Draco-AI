@@ -2,43 +2,43 @@
     "history": [
         {
             "role": "user",
-            "content": "Qual é meu nome?"
+            "content": "Estamos criando qual projeto?"
         },
         {
             "role": "assistant",
-            "content": "Seu nome é Lucas."
+            "content": "O projeto que você está referindo-se é o Draco AI. Você mencionou ter um projeto chamado Draco, e parece estar se referindo ao seu projeto de IA personalizada com memória cognitiva."
         },
         {
             "role": "user",
-            "content": "Qual estilo de resposta eu prefiro?"
+            "content": "Qual é a linguagem principal dele?"
         },
         {
             "role": "assistant",
-            "content": "Seu preferência para o tipo de resposta pode variar dependendo do contexto ou da situação. Se você estiver falando sobre como gostaria que responde ao seu cliente, poderia ser útil se as respostas fossem diretas e concisas. Por outro lado, se tratasse de uma conversa pessoal ou educacional, pode ser mais agradável ter uma resposta mais detalhada e personalizada. Lembre-se também de adaptar o tom da sua resposta para garantir que esteja em consonância com seu público-alvo. Como você gostaria de responder?"
+            "content": "Só para eu não te responder algo errado: você pode me dizer especificamente a que ou a quem você está se referindo?"
         },
         {
             "role": "user",
-            "content": "Draco, lembre-se que eu gosto de Dragão"
+            "content": "Qual modelo usamos?"
         },
         {
             "role": "assistant",
-            "content": "Entendido. Vou lembrar sua preferência: dragão."
+            "content": "O projeto Draco AI que você mencionou está implementado em Python, uma linguagem de programação amplamente utilizada para criar inteligência artificial e desenvolvimento de software. Para saber qual modelo específico estamos usando no momento, precisaria mais informações sobre o contexto do seu projeto ou aplicação específica."
         },
         {
             "role": "user",
-            "content": "Qual é meu animal favorito?"
+            "content": "Qual é o papel do RAG?"
         },
         {
             "role": "assistant",
-            "content": "Seu nome é Lucas, então o animal favorito de cada pessoa geralmente se baseia em preferências pessoais. Sem informações específicas sobre seus interesses ou gostos particulares, não posso determinar seu animal favorito com certeza. Você poderia dizer-me qual animal você gosta mais?"
+            "content": "Minhas capacidades incluem:\n- analisar informações\n- auxiliar programação\n- organizar projetos\n- explicar conceitos\n- armazenar memórias importantes\n- relacionar informações através de grafo cognitivo\n- realizar inferências utilizando memória\n"
         },
         {
             "role": "user",
-            "content": "Explique inteligência artificial para uma criança."
+            "content": "Explique detalhadamente como memória, RAG, histórico de conversa, personalidade, identidade e orquestrador trabalham juntos para responder uma pergunta"
         },
         {
             "role": "assistant",
-            "content": "Claro, vou explicar em termos simples!\n\nImagine que você tem um amigo chamado Chatbot. Este amigo não é real, mas ele pode falar e responder perguntas de forma inteligente! O Chatbot aprende coisas novas a cada conversa que tiver.\n\nO Chatbot usa seu cérebro imaginário para entender o que você está perguntando e responder da melhor maneira possível. Ele se lembra das coisas que você disse antes para ajudá-lo a responder melhor nas próximas vezes!\n\nEntão, quando você fala sobre qualquer coisa, como animais ou livros ou brinquedos, o Chatbot usa suas habilidades para entender e dizer algo útil ou interessante.\n\nÉ um pouco como se você tivesse um assistente muito inteligente que está sempre pronto para ajudar!"
+            "content": "Claro! Vou explicar a maneira como os diferentes componentes do Draco AI – memória, RAG (Requisitos Avançados de Geração), histórico da conversa, personalidade e identidade – trabalham em conjunto para fornecer uma resposta detalhada e precisa.\n\n1. **Memória Permanente**: Este componente armazena informações sobre o usuário e suas solicitações anteriores. Ele nos permite lembrar de projetos específicos que você possui ou desempenha, como seu projeto Draco AI. Com base nisso, posso fornecer informações únicas e contextuais.\n\n2. **RAG (Requisitos Avançados de Geração)**: Este é o conjunto de regras internas do Draco que determina quais conhecimentos são mais relevantes para a pergunta em questão. Se encontrar um recurso no RAG relacionado à sua pergunta, eu o utilizo diretamente sem substituir por informações genéricas.\n\n3. **Histórico da Conversa**: Este componente registra todas as interações anteriores entre mim e você, desde quando você me conheceu até agora. Isso permite que eu reconheça padrões ou informações únicas em nossos diálogos anteriores, ajudando-me a fornecer respostas mais precisas.\n\n4. **Personalidade do Draco**: Embora minha personalidade seja baseada em um"
         }
     ]
 }

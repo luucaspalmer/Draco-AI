@@ -12,8 +12,6 @@ from backend.context_builder import construir_contexto
 
 from backend.prompt_builder import construir_prompt
 
-from backend.context_manager import ContextManager
-
 from backend.tools.tool_manager import ToolManager
 
 
@@ -72,6 +70,13 @@ from backend.memory.memory_controller import processar_memoria
 # Raciocínio cognitivo
 
 from backend.memory.memory_reasoner import raciocinar
+
+
+# Camada de Inteligência (Intelligence)
+
+from backend.intelligence.intelligence_orchestrator import (
+    IntelligenceOrchestrator
+)
 
 
 
@@ -521,21 +526,52 @@ def pensar(pergunta):
 
 
     # =====================================
-    # Planejamento de contexto
+    # Camada de Inteligência (Intelligence)
     # =====================================
 
+    print(">>> ENTREI NA INTELLIGENCE <<<")
 
-    manager = ContextManager()
+    orquestrador = IntelligenceOrchestrator()
 
 
-
-    plano_contexto = manager.decidir_contexto(
+    decisao_inteligencia = orquestrador.analisar(
         pergunta,
-        intencao,
-        rota_pergunta
+        dados_pergunta,
+        rota_pergunta,
+        intencao
     )
 
 
+    print("\n====== INTELLIGENCE ORCHESTRATOR ======")
+
+    print(decisao_inteligencia)
+
+    print("========================================\n")
+
+
+    if decisao_inteligencia["precisa_esclarecimento"]:
+
+
+        resposta = decisao_inteligencia["pergunta_esclarecimento"]
+
+
+        adicionar_mensagem(
+            "user",
+            pergunta
+        )
+
+
+        adicionar_mensagem(
+            "assistant",
+            resposta
+        )
+
+
+        return resposta
+
+
+
+    plano_contexto = decisao_inteligencia["plano_contexto"]
 
 
     for chave, valor in plano_contexto.items():
@@ -564,6 +600,28 @@ def pensar(pergunta):
         pergunta,
         plano_contexto
     )
+
+
+
+
+    # =====================================
+    # Seleção de memória relevante (Intelligence)
+    # =====================================
+
+
+    if contexto.get("memoria_hierarquica"):
+
+
+        contexto["memoria_hierarquica"] = orquestrador.filtrar_memoria(
+            contexto["memoria_hierarquica"],
+            pergunta
+        )
+
+
+        contexto["personalidade"] = contexto["memoria_hierarquica"].get(
+            "PREFERENCIA",
+            {}
+        )
 
 
 
@@ -601,6 +659,11 @@ def pensar(pergunta):
     contexto[
         "executor"
     ] = executor
+
+
+    contexto[
+        "estrategia_resposta"
+    ] = decisao_inteligencia["estrategia_resposta"]
 
 
 

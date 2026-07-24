@@ -7,19 +7,25 @@ entre Draco AI e o modelo Qwen local.
 
 import requests
 import json
+import time
 
 from .config import OLLAMA_MODEL
 
 
-
 OLLAMA_URL = "http://localhost:11434/api/generate"
-
 
 
 def perguntar_ao_qwen(prompt):
 
 
     print("Draco esta pensando...")
+
+
+    print("==============================")
+    print("TAMANHO DO PROMPT")
+    print("Caracteres:", len(prompt))
+    print("Palavras:", len(prompt.split()))
+    print("==============================")
 
 
     dados = {
@@ -34,9 +40,23 @@ def perguntar_ao_qwen(prompt):
         "stream": True,
 
 
-        "keep_alive": "30m"
+        "keep_alive": "30m",
+
+
+        "options": {
+
+            # Limita o tamanho da resposta
+            # Evita gerações excessivamente longas
+
+            "num_predict": 300
+
+        }
 
     }
+
+
+
+    inicio = time.time()
 
 
 
@@ -67,6 +87,7 @@ def perguntar_ao_qwen(prompt):
         for linha in resposta.iter_lines():
 
 
+
             if not linha:
 
                 continue
@@ -89,11 +110,25 @@ def perguntar_ao_qwen(prompt):
 
 
             if dados_linha.get(
+
                 "done",
+
                 False
+
             ):
 
                 break
+
+
+
+        fim = time.time()
+
+
+
+        print("==============================")
+        print("TEMPO QWEN:")
+        print(round(fim - inicio, 2), "segundos")
+        print("==============================")
 
 
 
@@ -115,6 +150,7 @@ def perguntar_ao_qwen(prompt):
 
 
 
+
     except requests.exceptions.Timeout:
 
 
@@ -128,12 +164,16 @@ def perguntar_ao_qwen(prompt):
 
 
 
+
     except Exception as e:
 
 
         print(
+
             "ERRO OLLAMA:",
+
             e
+
         )
 
 
