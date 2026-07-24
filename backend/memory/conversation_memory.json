@@ -2,43 +2,43 @@
     "history": [
         {
             "role": "user",
-            "content": "Estamos criando qual projeto?"
+            "content": "Quem é Jhoricka ?"
         },
         {
             "role": "assistant",
-            "content": "O projeto que você está referindo-se é o Draco AI. Você mencionou ter um projeto chamado Draco, e parece estar se referindo ao seu projeto de IA personalizada com memória cognitiva."
+            "content": "Jhoricka é o nome artístico do projeto musical de DJ utilizado por Lucas Palmer."
         },
         {
             "role": "user",
-            "content": "Qual é a linguagem principal dele?"
+            "content": "Me conta a história do Draco"
         },
         {
             "role": "assistant",
-            "content": "Só para eu não te responder algo errado: você pode me dizer especificamente a que ou a quem você está se referindo?"
+            "content": "Desde sua criação, o Draco AI tem evoluído continuamente em inteligência e memória."
         },
         {
             "role": "user",
-            "content": "Qual modelo usamos?"
+            "content": "O que aconteceu no Ano Celestial ?"
         },
         {
             "role": "assistant",
-            "content": "O projeto Draco AI que você mencionou está implementado em Python, uma linguagem de programação amplamente utilizada para criar inteligência artificial e desenvolvimento de software. Para saber qual modelo específico estamos usando no momento, precisaria mais informações sobre o contexto do seu projeto ou aplicação específica."
+            "content": "No ano celestial 3021, nasceu Draco, primeiro filhote de Aldorion e Seraphina. Durante esse período histórico, os dragões enfrentaram desafios como o evento do Eclipse Sombrio, onde a organização Os Consumidores de Memória tentou destruir todos os registros existentes para controlar o conhecimento do mundo."
         },
         {
             "role": "user",
-            "content": "Qual é o papel do RAG?"
+            "content": "O que é Inteligencia Artificial ?"
         },
         {
             "role": "assistant",
-            "content": "Minhas capacidades incluem:\n- analisar informações\n- auxiliar programação\n- organizar projetos\n- explicar conceitos\n- armazenar memórias importantes\n- relacionar informações através de grafo cognitivo\n- realizar inferências utilizando memória\n"
+            "content": "Inteligência Artificial (IA) refere-se a sistemas e programas desenvolvidos para simular a inteligência humana, permitindo ações complexas como aprendizado, raciocínio, comunicação natural e tomada de decisão."
         },
         {
             "role": "user",
-            "content": "Explique detalhadamente como memória, RAG, histórico de conversa, personalidade, identidade e orquestrador trabalham juntos para responder uma pergunta"
+            "content": "Voce chegou para alegrar o dia"
         },
         {
             "role": "assistant",
-            "content": "Claro! Vou explicar a maneira como os diferentes componentes do Draco AI – memória, RAG (Requisitos Avançados de Geração), histórico da conversa, personalidade e identidade – trabalham em conjunto para fornecer uma resposta detalhada e precisa.\n\n1. **Memória Permanente**: Este componente armazena informações sobre o usuário e suas solicitações anteriores. Ele nos permite lembrar de projetos específicos que você possui ou desempenha, como seu projeto Draco AI. Com base nisso, posso fornecer informações únicas e contextuais.\n\n2. **RAG (Requisitos Avançados de Geração)**: Este é o conjunto de regras internas do Draco que determina quais conhecimentos são mais relevantes para a pergunta em questão. Se encontrar um recurso no RAG relacionado à sua pergunta, eu o utilizo diretamente sem substituir por informações genéricas.\n\n3. **Histórico da Conversa**: Este componente registra todas as interações anteriores entre mim e você, desde quando você me conheceu até agora. Isso permite que eu reconheça padrões ou informações únicas em nossos diálogos anteriores, ajudando-me a fornecer respostas mais precisas.\n\n4. **Personalidade do Draco**: Embora minha personalidade seja baseada em um"
+            "content": "Entendo sua pergunta, mas não tenho informações específicas sobre \"alegrou o dia\" no contexto atual."
         }
     ]
 }

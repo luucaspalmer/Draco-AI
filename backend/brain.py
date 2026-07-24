@@ -12,6 +12,8 @@ from backend.context_builder import construir_contexto
 
 from backend.prompt_builder import construir_prompt
 
+from backend.context_manager import ContextManager
+
 from backend.tools.tool_manager import ToolManager
 
 
@@ -57,6 +59,13 @@ from backend.question.entity_classifier import (
 )
 
 
+# Response Planner
+
+from backend.question.response_planner import (
+    planejar_resposta
+)
+
+
 # Memória cognitiva
 
 from backend.memory.memory_detector import (
@@ -70,13 +79,6 @@ from backend.memory.memory_controller import processar_memoria
 # Raciocínio cognitivo
 
 from backend.memory.memory_reasoner import raciocinar
-
-
-# Camada de Inteligência (Intelligence)
-
-from backend.intelligence.intelligence_orchestrator import (
-    IntelligenceOrchestrator
-)
 
 
 
@@ -256,6 +258,35 @@ def pensar(pergunta):
     print(rota_pergunta)
 
     print("=============================\n")
+
+
+
+
+# =====================================
+# Response Planner
+#
+# Decide o ESTILO da resposta (DIRETA,
+# EXPLICATIVA ou APROFUNDADA) antes de
+# montar o contexto e o prompt.
+#
+# Perguntas que serão respondidas de forma
+# imediata (identity/memory/tool "handled")
+# não usam esse plano, pois nem chegam
+# a montar prompt para o Qwen.
+# =====================================
+
+    plano_resposta = planejar_resposta(
+        pergunta,
+        dados_pergunta,
+        rota_pergunta
+    )
+
+
+    print("\n====== RESPONSE PLANNER ======")
+
+    print(plano_resposta)
+
+    print("==============================\n")
 
 
 
@@ -526,52 +557,21 @@ def pensar(pergunta):
 
 
     # =====================================
-    # Camada de Inteligência (Intelligence)
+    # Planejamento de contexto
     # =====================================
 
-    print(">>> ENTREI NA INTELLIGENCE <<<")
 
-    orquestrador = IntelligenceOrchestrator()
+    manager = ContextManager()
 
 
-    decisao_inteligencia = orquestrador.analisar(
+
+    plano_contexto = manager.decidir_contexto(
         pergunta,
-        dados_pergunta,
-        rota_pergunta,
-        intencao
+        intencao,
+        rota_pergunta
     )
 
 
-    print("\n====== INTELLIGENCE ORCHESTRATOR ======")
-
-    print(decisao_inteligencia)
-
-    print("========================================\n")
-
-
-    if decisao_inteligencia["precisa_esclarecimento"]:
-
-
-        resposta = decisao_inteligencia["pergunta_esclarecimento"]
-
-
-        adicionar_mensagem(
-            "user",
-            pergunta
-        )
-
-
-        adicionar_mensagem(
-            "assistant",
-            resposta
-        )
-
-
-        return resposta
-
-
-
-    plano_contexto = decisao_inteligencia["plano_contexto"]
 
 
     for chave, valor in plano_contexto.items():
@@ -600,28 +600,6 @@ def pensar(pergunta):
         pergunta,
         plano_contexto
     )
-
-
-
-
-    # =====================================
-    # Seleção de memória relevante (Intelligence)
-    # =====================================
-
-
-    if contexto.get("memoria_hierarquica"):
-
-
-        contexto["memoria_hierarquica"] = orquestrador.filtrar_memoria(
-            contexto["memoria_hierarquica"],
-            pergunta
-        )
-
-
-        contexto["personalidade"] = contexto["memoria_hierarquica"].get(
-            "PREFERENCIA",
-            {}
-        )
 
 
 
@@ -662,8 +640,8 @@ def pensar(pergunta):
 
 
     contexto[
-        "estrategia_resposta"
-    ] = decisao_inteligencia["estrategia_resposta"]
+        "plano_resposta"
+    ] = plano_resposta
 
 
 
@@ -754,9 +732,16 @@ def pensar(pergunta):
     print("===============================\n")
 
 
+    print("\n====== LIMITE DE RESPOSTA ======")
+    print("Estilo:", plano_resposta["estilo"])
+    print("num_predict:", plano_resposta["num_predict"])
+    print("================================\n")
+
+
 
     resposta = perguntar_ao_qwen(
-        prompt
+        prompt,
+        num_predict=plano_resposta["num_predict"]
     )
 
 

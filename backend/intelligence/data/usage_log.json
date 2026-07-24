@@ -687,6 +687,54 @@
             "origem": "intelligence",
             "confianca": null,
             "timestamp": "2026-07-24 09:17:03"
+        },
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-24 19:52:45"
+        },
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-24 19:55:43"
+        },
+        {
+            "pergunta": "rag",
+            "categoria": "conhecimento",
+            "chaves": [
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-24 19:57:02"
+        },
+        {
+            "pergunta": "inteligencia artificial",
+            "categoria": "conhecimento",
+            "chaves": [
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-24 20:12:05"
         }
     ]
 }

@@ -1,8 +1,8 @@
 =========================================
-DRACO AI v0.1.0
+DRACO AI v1.0
 =========================================
-
 Data: 17/07/2026
+
 Primeira versão do Draco AI criada com sucesso!
 
 Esta versão representa a fundação inicial do Draco AI, contendo:
@@ -23,6 +23,7 @@ evolução contínua.
 DRACO AI v1.1
 =========================================
 Data: 18/07/2026
+
 - Vamos implementar uma memoria cognitiva, para fazer ele interpretar e armazenar as responsta de uma jeito melhor. Draco deixa de apenas armazenar memória e começa a usar memória durante o raciocínio.
 Draco recebe uma informação,
 estrutura,
@@ -35,6 +36,7 @@ A memória deixou de ser apenas armazenamento e passou a participar do raciocín
 DRACO AI v1.2
 =========================================
 Data: 19/07/2026
+
 - Sistema de voz implementado.
 - Reconhecimento de fala com Whisper.
 - Respostas em áudio com Piper.
@@ -45,6 +47,8 @@ Data: 19/07/2026
 =========================================
 DRACO AI v1.3
 =========================================
+Data: 20/07/2026
+
 Implementando o RAG no Draco AI, agora ele e capaz de analisar dados do banco de dados interno e usar como fonte principal para respostas.
 
 Novos recursos:
@@ -66,6 +70,48 @@ Memória:
 + Draco utiliza memórias aprendidas durante conversas.
 
 
+=========================================
+DRACO AI v1.4
+=========================================
+Data: 21/07/2026
+
+Implementação da camada Intelligence.
+O Draco AI deixa de possuir apenas sistemas
+reativos baseados em regras e passa a ter uma
+camada dedicada de análise, planejamento e
+tomada de decisão antes da geração da resposta.
+
+Melhora a identificação de:
+
+- perguntas simples
+- solicitações técnicas
+- pedidos de explicação
+- comandos
+- conversas naturais
+- sistema para detectar perguntas
+ambíguas.
+
+O Draco agora consegue identificar quando:
+
+- falta informação na pergunta
+- existem múltiplas interpretações
+- é necessário contexto adicional
+
+
+=========================================
+DRACO AI v1.5
+=========================================
+Data: 23/07/2026
+
+Otimização estrutural para melhoria de
+desempenho e redução de processamento.
+O Draco passa a ajustar a resposta conforme
+a complexidade da pergunta.
+O objetivo dessa atualização foi reduzir
+o tempo de processamento e preparar o Draco
+para evoluir sem aumentar proporcionalmente
+o custo computacional.
+O Draco deixa de depender de força bruta e passa a utilizar inteligência de seleção de contexto.
 
 
 
