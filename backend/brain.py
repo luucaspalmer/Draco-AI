@@ -81,6 +81,11 @@ from backend.memory.memory_controller import processar_memoria
 from backend.memory.memory_reasoner import raciocinar
 
 
+# System Actions API
+
+from backend.system.system_actions import process_text
+
+
 
 # =====================================
 # Aprendizado automático
@@ -141,6 +146,42 @@ def pensar(pergunta):
         return "Não recebi nenhuma mensagem."
 
 
+
+
+    # =====================================
+    # System Actions API
+    #
+    # Comandos de controle do sistema
+    # operacional (abrir programas, etc.)
+    # são interceptados aqui e NUNCA
+    # chegam ao LLM.
+    # =====================================
+
+    resultado_sistema = process_text(
+        pergunta
+    )
+
+    if resultado_sistema:
+
+        print("\n====== SYSTEM ACTION DETECTADA ======")
+
+        print(resultado_sistema)
+
+        print("======================================\n")
+
+        resposta_sistema = resultado_sistema.message
+
+        adicionar_mensagem(
+            "user",
+            pergunta
+        )
+
+        adicionar_mensagem(
+            "assistant",
+            resposta_sistema
+        )
+
+        return resposta_sistema
 
 
 

@@ -445,6 +445,14 @@ const Voice = {
                 );
 
 
+                // O backend já pausou o detector de wake
+                // word antes de responder. Como o áudio não
+                // vai ser reproduzido neste caso, notificamos
+                // o fim do "playback" imediatamente, para não
+                // deixar o detector pausado sem necessidade.
+                await this.notifyPlaybackFinished();
+
+
                 return;
 
 
@@ -482,6 +490,13 @@ const Voice = {
             console.error(
                 error
             );
+
+
+            // Se a chamada falhou depois que o backend já
+            // processou e pausou o detector (ex.: erro de
+            // rede na resposta), garantimos que o Wake
+            // Assistant não fique pausado indefinidamente.
+            await this.notifyPlaybackFinished();
 
 
         }
@@ -597,6 +612,59 @@ const Voice = {
 
 
     // =====================================
+    // Notificar backend: playback terminado
+    //
+    // Chamado sempre que um áudio do Draco termina de tocar
+    // (com sucesso ou erro), para reativar o detector de
+    // wake word no backend (que foi pausado antes da resposta
+    // ser enviada, em /voice).
+    //
+    // Serve para QUALQUER reprodução de áudio feita pelo
+    // frontend, não apenas a deste botão.
+    // =====================================
+
+    async notifyPlaybackFinished(){
+
+
+        try {
+
+
+            await fetch(
+
+                "http://127.0.0.1:8000/voice/playback-finished",
+
+                {
+
+                    method:"POST"
+
+                }
+
+            );
+
+
+        }
+
+
+        catch(error){
+
+
+            console.error(
+
+                "Erro ao notificar fim de playback:",
+
+                error
+
+            );
+
+
+        }
+
+
+    },
+
+
+
+    // =====================================
     // Áudio Draco
     // =====================================
 
@@ -629,24 +697,34 @@ const Voice = {
 
 
 
-        audio.onended = ()=>{
+        audio.onended = async ()=>{
 
 
             this.mudarEstadoDraco(
                 "IDLE"
             );
+
+
+            await this.notifyPlaybackFinished();
 
 
         };
 
 
 
-        audio.onerror = ()=>{
+        audio.onerror = async ()=>{
 
 
             this.mudarEstadoDraco(
                 "IDLE"
             );
+
+
+            // Mesmo em erro de reprodução, o backend já
+            // pausou o detector antes de enviar a resposta —
+            // precisamos reativar para não travar a wake
+            // word.
+            await this.notifyPlaybackFinished();
 
 
         };

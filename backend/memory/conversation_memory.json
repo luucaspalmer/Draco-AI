@@ -2,43 +2,43 @@
     "history": [
         {
             "role": "user",
-            "content": "Quem é Jhoricka ?"
+            "content": "Abre ou semitê."
         },
         {
             "role": "assistant",
-            "content": "Jhoricka é o nome artístico do projeto musical de DJ utilizado por Lucas Palmer."
+            "content": "Abrindo cmd."
         },
         {
             "role": "user",
-            "content": "Me conta a história do Draco"
+            "content": "O que é IA ?"
         },
         {
             "role": "assistant",
-            "content": "Desde sua criação, o Draco AI tem evoluído continuamente em inteligência e memória."
+            "content": "Inteligência Artificial é um campo da informática que engloba o desenvolvimento de softwares e sistemas capazes de realizar tarefas complexas semelhantes ou superiores às realizadas por humanos."
         },
         {
             "role": "user",
-            "content": "O que aconteceu no Ano Celestial ?"
+            "content": "O que é IA ?"
         },
         {
             "role": "assistant",
-            "content": "No ano celestial 3021, nasceu Draco, primeiro filhote de Aldorion e Seraphina. Durante esse período histórico, os dragões enfrentaram desafios como o evento do Eclipse Sombrio, onde a organização Os Consumidores de Memória tentou destruir todos os registros existentes para controlar o conhecimento do mundo."
+            "content": "Inteligência Artificial é um campo da informática que engloba o desenvolvimento de softwares e sistemas capazes de realizar tarefas complexas semelhantes ou superiores às realizadas por humanos."
         },
         {
             "role": "user",
-            "content": "O que é Inteligencia Artificial ?"
+            "content": "O que é IA ?"
         },
         {
             "role": "assistant",
-            "content": "Inteligência Artificial (IA) refere-se a sistemas e programas desenvolvidos para simular a inteligência humana, permitindo ações complexas como aprendizado, raciocínio, comunicação natural e tomada de decisão."
+            "content": "Inteligência Artificial (IA) refere-se à capacidade de desenvolver softwares e sistemas capazes de realizar tarefas complexas semelhantes ou superiores às realizadas por humanos."
         },
         {
             "role": "user",
-            "content": "Voce chegou para alegrar o dia"
+            "content": "O que é i-a?"
         },
         {
             "role": "assistant",
-            "content": "Entendo sua pergunta, mas não tenho informações específicas sobre \"alegrou o dia\" no contexto atual."
+            "content": "Meu propósito é: Ser um parceiro de longo prazo para auxiliar aprendizado, criação, organização, desenvolvimento de projetos e evolução pessoal."
         }
     ]
 }

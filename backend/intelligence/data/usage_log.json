@@ -735,6 +735,142 @@
             "origem": "qwen",
             "confianca": 0.7,
             "timestamp": "2026-07-24 20:12:05"
+        },
+        {
+            "pergunta": "voce",
+            "categoria": "geral",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome",
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente",
+                "preferencias",
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses",
+                "history"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-27 13:54:18"
+        },
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-27 13:54:19"
+        },
+        {
+            "pergunta": "jorika",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-28 15:35:18"
+        },
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-28 15:35:18"
+        },
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-28 17:52:38"
+        },
+        {
+            "pergunta": "kaneka",
+            "categoria": "projeto",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-29 08:39:26"
+        },
+        {
+            "pergunta": "esse garum",
+            "categoria": "conhecimento",
+            "chaves": [
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-29 08:41:06"
+        },
+        {
+            "pergunta": "tesouro",
+            "categoria": "geral",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome",
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente",
+                "preferencias",
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses",
+                "history"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-29 08:45:20"
+        },
+        {
+            "pergunta": "remédio",
+            "categoria": "conhecimento",
+            "chaves": [
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-29 09:38:01"
+        },
+        {
+            "pergunta": "i-a",
+            "categoria": "projeto",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-29 10:04:23"
         }
     ]
 }

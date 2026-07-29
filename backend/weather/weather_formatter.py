@@ -129,20 +129,14 @@ class WeatherFormatter:
             f"Consultei as condições meteorológicas para Araucária. "
 
             f"{period.capitalize()}, a temperatura é de "
-            f"{temperature}°C, com sensação térmica de "
-            f"{feels_like}°C. "
+            f"{temperature}°C."
 
             f"O tempo está {weather_description}, "
             f"com umidade relativa do ar em "
             f"{humidity}%. "
-
             f"Os ventos sopram do "
             f"{wind_direction} "
             f"a {wind_speed} km/h. "
-
-            f"A pressão atmosférica está em "
-            f"{pressure} hPa. "
-
             f"{rain_status}"
 
         )

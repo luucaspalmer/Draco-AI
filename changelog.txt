@@ -114,6 +114,31 @@ o custo computacional.
 O Draco deixa de depender de força bruta e passa a utilizar inteligência de seleção de contexto.
 
 
+=========================================
+DRACO AI v1.6
+=========================================
+Data: 29/07/2026
+
+Nesta versão foi implementado o sistema de
+ativação por voz. Agora o Draco AI permanece em
+estado de espera e pode ser iniciado apenas com
+o comando "Draco", iniciando automaticamente o
+fluxo de escuta, interpretação da solicitação e
+resposta por voz, sem necessidade de interação
+com a interface.
+
+Além disso, o Draco recebeu sua primeira camada
+de interação com o sistema operacional. Foi
+desenvolvida uma API própria responsável por
+traduzir comandos em linguagem natural para ações
+executadas diretamente no Windows. Com isso, o
+assistente deixa de apenas responder perguntas e
+passa a realizar tarefas reais no computador,
+como abrir aplicativos e executar comandos do
+sistema.
+
+
+
 
 
 
