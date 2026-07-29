@@ -2,7 +2,31 @@
     "history": [
         {
             "role": "user",
-            "content": "Abre ou semitê."
+            "content": "O que é python"
+        },
+        {
+            "role": "assistant",
+            "content": "Python é um linguagem de programação high-level e de script, criada pelo Dr. Guido van Rossum. Ele é conhecido por sua sintaxe limpa e fácil de ler, o que torna a Python popular para aprendizado de programação e desenvolvimento de aplicativos em diversos campos."
+        },
+        {
+            "role": "user",
+            "content": "Faça uma análise profunda da arquitetura do Draco AI"
+        },
+        {
+            "role": "assistant",
+            "content": "Minha arquitetura utiliza: Qwen 2.5 executado localmente através do Ollama.\n\nMinha infraestrutura: Sistema Draco AI desenvolvido em Python com módulos independentes de identidade, memória, personalidade e processamento.\n\nMeus principais componentes são:\n- identity.py - responsável pela identidade oficial do Draco\n- personality.py - responsável pelo comportamento e estilo de resposta\n- memory.py - responsável pelo armazenamento de informações aprendidas\n- conversation_memory.py - responsável pelo contexto da conversa atual\n- memory_graph.py - responsável pelas relações entre informações\n- memory_reasoner.py - responsável pelo raciocínio sobre memória\n- memory_reasoning_rules.py - responsável pelas regras cognitivas\n- brain.py - responsável pelo fluxo de decisão\n- commands.py - responsável pelas ações internas\n- ollama_client.py - responsável pela comunicação com o modelo de linguagem\n\nMeu fluxo de processamento:\n- Receber mensagem do usuário\n- Identificar intenção\n- Consultar identidade, memória ou grafo cognitivo\n- Aplicar raciocínio sobre memória quando necessário\n- Construir contexto cognitivo\n- Processar resposta através do modelo de linguagem\n- Responder mantendo personalidade e contexto\n"
+        },
+        {
+            "role": "user",
+            "content": "Qual a previsão do tempo?"
+        },
+        {
+            "role": "assistant",
+            "content": "Em Araucária, agora faz 19.7°C, com sensação de 19.9°C e encoberto. A umidade está em 79%.\n\nPara hoje, a temperatura varia entre 14.6°C e 21.8°C. Há até 100% de chance de chuva, com previsão de 4.5 mm ao longo do dia."
+        },
+        {
+            "role": "user",
+            "content": "Abre o CMD."
         },
         {
             "role": "assistant",
@@ -10,35 +34,11 @@
         },
         {
             "role": "user",
-            "content": "O que é IA ?"
+            "content": "O que é Intelizência Artificial."
         },
         {
             "role": "assistant",
-            "content": "Inteligência Artificial é um campo da informática que engloba o desenvolvimento de softwares e sistemas capazes de realizar tarefas complexas semelhantes ou superiores às realizadas por humanos."
-        },
-        {
-            "role": "user",
-            "content": "O que é IA ?"
-        },
-        {
-            "role": "assistant",
-            "content": "Inteligência Artificial é um campo da informática que engloba o desenvolvimento de softwares e sistemas capazes de realizar tarefas complexas semelhantes ou superiores às realizadas por humanos."
-        },
-        {
-            "role": "user",
-            "content": "O que é IA ?"
-        },
-        {
-            "role": "assistant",
-            "content": "Inteligência Artificial (IA) refere-se à capacidade de desenvolver softwares e sistemas capazes de realizar tarefas complexas semelhantes ou superiores às realizadas por humanos."
-        },
-        {
-            "role": "user",
-            "content": "O que é i-a?"
-        },
-        {
-            "role": "assistant",
-            "content": "Meu propósito é: Ser um parceiro de longo prazo para auxiliar aprendizado, criação, organização, desenvolvimento de projetos e evolução pessoal."
+            "content": "Inteligência Artificial (IA) é um campo da ciência da computação que foca na criação de sistemas e programas capazes de realizar tarefas que normalmente exigem inteligência humana, como aprendizado automático, reconhecimento de voz e imagem, processamento de linguagem natural e tomada de decisões."
         }
     ]
 }

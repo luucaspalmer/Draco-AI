@@ -60,6 +60,20 @@ class WeatherService:
 
             ],
 
+            "daily": [
+
+                "temperature_2m_min",
+
+                "temperature_2m_max",
+
+                "precipitation_probability_max",
+
+                "precipitation_sum"
+
+            ],
+
+            "timezone": "auto",
+
             "forecast_days": 1
 
         }

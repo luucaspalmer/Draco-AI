@@ -50,6 +50,10 @@ def construir_prompt(contexto):
         {}
     )
 
+    estrategia_resposta = contexto.get(
+        "estrategia_resposta"
+    )
+
 
 
     prompt = []
@@ -396,6 +400,17 @@ Não amplie o assunto por conta própria.
 
 
     # =====================================
+    if estrategia_resposta:
+
+        prompt.append(
+            "\n=== ESTRATÉGIA DE RESPOSTA ==="
+        )
+
+        prompt.append(
+            estrategia_resposta
+        )
+
+
     # Pergunta atual
     # =====================================
 

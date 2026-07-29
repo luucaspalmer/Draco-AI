@@ -54,36 +54,10 @@ def get_wind_direction(
 
 
 
-    directions = [
+    direction_index = int(
+        (degrees + 22.5) // 45
+    ) % 8
 
-        (0, "norte"),
-
-        (22.5, "nordeste"),
-
-        (67.5, "leste"),
-
-        (112.5, "sudeste"),
-
-        (157.5, "sul"),
-
-        (202.5, "sudoeste"),
-
-        (247.5, "oeste"),
-
-        (292.5, "noroeste"),
-
-        (337.5, "norte")
-
+    return WIND_DIRECTIONS[
+        direction_index * 45
     ]
-
-
-
-    for limit, direction in directions:
-
-        if degrees < limit:
-
-            return direction
-
-
-
-    return "norte"

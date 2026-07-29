@@ -12,7 +12,9 @@ from backend.context_builder import construir_contexto
 
 from backend.prompt_builder import construir_prompt
 
-from backend.context_manager import ContextManager
+from backend.intelligence.intelligence_orchestrator import (
+    IntelligenceOrchestrator
+)
 
 from backend.tools.tool_manager import ToolManager
 
@@ -201,48 +203,6 @@ def pensar(pergunta):
     # Verificação de ferramentas
     # =====================================
 
-    tool_name = dados_pergunta.get(
-        "tool"
-    )
-
-
-    if tool_name:
-
-        print("\n====== TOOL DETECTADA ======")
-
-        print(tool_name)
-
-        print("============================\n")
-
-
-        tool_manager = ToolManager()
-
-
-        resposta_tool = tool_manager.execute(
-            tool_name
-        )
-
-
-        if resposta_tool:
-
-
-            adicionar_mensagem(
-                "user",
-                pergunta
-            )
-
-
-            adicionar_mensagem(
-                "assistant",
-                resposta_tool
-            )
-
-
-            return resposta_tool
-
-
-
-
     # =====================================
     # Entity Resolver
     # =====================================
@@ -316,6 +276,53 @@ def pensar(pergunta):
 # a montar prompt para o Qwen.
 # =====================================
 
+    # Resolve intent before Intelligence so every decision uses the same
+    # intent selected by the main pipeline.
+    intencao = identificar_intencao(
+        pergunta
+    )
+
+    if intencao == "conversa":
+
+        intencao_ai = identificar_intencao_ai(
+            pergunta
+        )
+
+        if intencao_ai != "conversa":
+
+            intencao = intencao_ai
+
+    dados_pergunta["intent"] = intencao
+
+    intelligence = IntelligenceOrchestrator()
+
+    resultado_intelligence = intelligence.analisar(
+        pergunta,
+        dados_pergunta,
+        rota_pergunta,
+        intencao
+    )
+
+    if resultado_intelligence["precisa_esclarecimento"]:
+
+        resposta_esclarecimento = resultado_intelligence[
+            "pergunta_esclarecimento"
+        ]
+
+        adicionar_mensagem(
+            "user",
+            pergunta
+        )
+
+        adicionar_mensagem(
+            "assistant",
+            resposta_esclarecimento
+        )
+
+        return resposta_esclarecimento
+
+    # Response Planner keeps the num_predict contract. Intelligence adds
+    # the complementary response strategy to the prompt.
     plano_resposta = planejar_resposta(
         pergunta,
         dados_pergunta,
@@ -328,6 +335,46 @@ def pensar(pergunta):
     print(plano_resposta)
 
     print("==============================\n")
+
+
+    # =====================================
+    # Ferramentas
+    #
+    # Ambiguity has already been handled. Tools run only when the request
+    # has enough reference information.
+    # =====================================
+
+    tool_name = dados_pergunta.get(
+        "tool"
+    )
+
+    if tool_name:
+
+        print("\n====== TOOL DETECTADA ======")
+
+        print(tool_name)
+
+        print("============================\n")
+
+        tool_manager = ToolManager()
+
+        resposta_tool = tool_manager.execute(
+            tool_name
+        )
+
+        if resposta_tool:
+
+            adicionar_mensagem(
+                "user",
+                pergunta
+            )
+
+            adicionar_mensagem(
+                "assistant",
+                resposta_tool
+            )
+
+            return resposta_tool
 
 
 
@@ -462,31 +509,6 @@ def pensar(pergunta):
     # =====================================
 
 
-    intencao = identificar_intencao(
-        pergunta
-    )
-
-
-
-    if intencao == "conversa":
-
-
-        intencao_ai = identificar_intencao_ai(
-            pergunta
-        )
-
-
-        if intencao_ai != "conversa":
-
-            intencao = intencao_ai
-
-
-
-
-
-
-
-
 
     # =====================================
     # Comandos diretos
@@ -602,15 +624,9 @@ def pensar(pergunta):
     # =====================================
 
 
-    manager = ContextManager()
-
-
-
-    plano_contexto = manager.decidir_contexto(
-        pergunta,
-        intencao,
-        rota_pergunta
-    )
+    plano_contexto = resultado_intelligence[
+        "plano_contexto"
+    ]
 
 
 
@@ -641,6 +657,17 @@ def pensar(pergunta):
         pergunta,
         plano_contexto
     )
+
+    memoria_hierarquica = contexto.get(
+        "memoria_hierarquica"
+    )
+
+    if memoria_hierarquica:
+
+        contexto["memoria_hierarquica"] = intelligence.filtrar_memoria(
+            memoria_hierarquica,
+            pergunta
+        )
 
 
 
@@ -683,6 +710,14 @@ def pensar(pergunta):
     contexto[
         "plano_resposta"
     ] = plano_resposta
+
+    contexto[
+        "estrategia_resposta"
+    ] = resultado_intelligence["estrategia_resposta"]
+
+    contexto[
+        "intelligence"
+    ] = resultado_intelligence
 
 
 

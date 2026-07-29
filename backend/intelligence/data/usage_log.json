@@ -871,6 +871,66 @@
             "origem": "qwen",
             "confianca": 0.7,
             "timestamp": "2026-07-29 10:04:23"
+        },
+        {
+            "pergunta": "Qual meu nome?",
+            "categoria": "PERMANENTE",
+            "chaves": [
+                "nome"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-29 11:21:26"
+        },
+        {
+            "pergunta": "Meu projeto principal é o Draco AI",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-29 11:37:21"
+        },
+        {
+            "pergunta": "Estou criando uma inteligência artificial pessoal",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projetos",
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-29 11:38:15"
+        },
+        {
+            "pergunta": "Qual é meu projeto?",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projetos"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-29 11:44:14"
+        },
+        {
+            "pergunta": "intelizência artificial",
+            "categoria": "conhecimento",
+            "chaves": [
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-29 11:50:19"
         }
     ]
 }
