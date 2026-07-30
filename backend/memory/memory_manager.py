@@ -42,10 +42,7 @@ ARQUIVOS_MEMORIA = {
 
     "CONHECIMENTO":
         "knowledge_memory.json",
-
-
-    "CONVERSA":
-        "conversation_memory.json"
+        
 
 }
 

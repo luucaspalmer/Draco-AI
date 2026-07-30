@@ -969,6 +969,66 @@
             "origem": "qwen",
             "confianca": 0.7,
             "timestamp": "2026-07-29 13:32:05"
+        },
+        {
+            "pergunta": "Olá",
+            "categoria": "PERMANENTE",
+            "chaves": [
+                "nome",
+                "localizacao",
+                "idade"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-30 10:23:42"
+        },
+        {
+            "pergunta": "Olá",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projetos"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-30 10:23:55"
+        },
+        {
+            "pergunta": "Olá",
+            "categoria": "PREFERENCIA",
+            "chaves": [
+                "preferencias"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-30 10:23:58"
+        },
+        {
+            "pergunta": "Olá",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-30 10:24:08"
+        },
+        {
+            "pergunta": "Meu animal favorito é dragão.",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projetos"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-30 10:25:17"
         }
     ]
 }

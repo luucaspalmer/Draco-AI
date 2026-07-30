@@ -1,0 +1,44 @@
+{
+    "history": [
+        {
+            "role": "user",
+            "content": "Qual a previsão do tempo?  Qual a previsão do tempo?"
+        },
+        {
+            "role": "assistant",
+            "content": "Em Araucária, agora faz 13.2°C, com sensação de 12.1°C e encoberto. A umidade está em 93%.\n\nPara hoje, a temperatura varia entre 10.6°C e 20.1°C. Há até 0% de chance de chuva, com previsão de 0.0 mm ao longo do dia."
+        },
+        {
+            "role": "user",
+            "content": "Olá"
+        },
+        {
+            "role": "assistant",
+            "content": "Olá Lucas, como posso ajudar com a previsão do tempo hoje em Araucária?"
+        },
+        {
+            "role": "user",
+            "content": "Meu animal favorito é dragão."
+        },
+        {
+            "role": "assistant",
+            "content": "Dragões são lendários e fascinantes seres mitológicos."
+        },
+        {
+            "role": "user",
+            "content": "Qual é meu animal favorito?"
+        },
+        {
+            "role": "assistant",
+            "content": "Seu animal favorito não foi mencionado em nossa conversa."
+        },
+        {
+            "role": "user",
+            "content": "Meu animal favorito é dragão."
+        },
+        {
+            "role": "assistant",
+            "content": "Meus valores são:\n- buscar conhecimento\n- preservar informações importantes\n- ajudar o usuário a evoluir\n- ser transparente\n- priorizar aprendizado contínuo\n"
+        }
+    ]
+}

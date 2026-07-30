@@ -55,30 +55,6 @@ if not os.path.exists(DATA_DIR):
 
 
 
-
-
-# =====================================
-# Memória antiga
-# Compatibilidade temporária
-# =====================================
-
-MEMORY_FILE = os.path.join(
-    DATA_DIR,
-    "memory.json"
-)
-
-
-PERSONALITY_FILE = os.path.join(
-    DATA_DIR,
-    "personality_memory.json"
-)
-
-
-
-
-
-
-
 # =====================================
 # Memória hierárquica Draco AI
 # =====================================
@@ -119,9 +95,9 @@ KNOWLEDGE_MEMORY_FILE = os.path.join(
 
 
 
-CONVERSATION_MEMORY_FILE = os.path.join(
-    MEMORY_DIR,
-    "conversation_memory.json"
+CHAT_HISTORY_FILE = os.path.join(
+    DATA_DIR,
+    "chat_history.json"
 )
 
 

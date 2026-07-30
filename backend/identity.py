@@ -208,8 +208,8 @@ DRACO_IDENTITY = {
             "identity.py - responsável pela identidade oficial do Draco",
 
             "personality.py - responsável pelo comportamento e estilo de resposta",
-
-            "memory.py - responsável pelo armazenamento de informações aprendidas",
+ 
+            "memory/ (pacote) - responsável pela memória cognitiva persistente (permanente, projeto, preferência, conhecimento)",
 
             "conversation_memory.py - responsável pelo contexto da conversa atual",
 

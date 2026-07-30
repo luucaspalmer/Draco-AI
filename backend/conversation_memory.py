@@ -3,7 +3,7 @@ import os
 
 
 from .config import (
-    CONVERSATION_MEMORY_FILE,
+    CHAT_HISTORY_FILE,
     MAX_HISTORY
 )
 
@@ -37,7 +37,7 @@ def carregar_historico():
 
 
     if not os.path.exists(
-        CONVERSATION_MEMORY_FILE
+        CHAT_HISTORY_FILE
     ):
 
 
@@ -55,7 +55,7 @@ def carregar_historico():
 
 
     with open(
-        CONVERSATION_MEMORY_FILE,
+        CHAT_HISTORY_FILE,
         "r",
         encoding="utf-8"
     ) as arquivo:
@@ -79,7 +79,7 @@ def salvar_historico(historico):
 
 
     with open(
-        CONVERSATION_MEMORY_FILE,
+        CHAT_HISTORY_FILE,
         "w",
         encoding="utf-8"
     ) as arquivo:

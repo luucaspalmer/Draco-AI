@@ -469,17 +469,76 @@ def detectar_conhecimentos(texto, memoria):
 
 
 
+
+
+
+# =====================================
+# Detectar preferências
+# =====================================
+
+def detectar_preferencias(texto, memoria):
+
+
+    padroes = [
+
+        r"meu\s+\w+\s+favorito é ([^.!,]+)",
+
+        r"minha\s+\w+\s+favorita é ([^.!,]+)",
+
+        r"meu favorito é ([^.!,]+)",
+
+        r"minha favorita é ([^.!,]+)",
+
+        r"eu prefiro ([^.!,]+)",
+
+        r"minha preferência é ([^.!,]+)",
+
+        r"minha preferencia é ([^.!,]+)"
+
+    ]
+
+
+    for padrao in padroes:
+
+
+        resultados = re.findall(
+
+            padrao,
+
+            texto,
+
+            re.IGNORECASE
+
+        )
+
+
+        for item in resultados:
+
+
+            item = limpar_texto(item)
+
+
+            if item:
+
+                memoria["preferencias"].append(item)
+
+
+
 # =====================================
 # Identificar tipo mensagem
 # =====================================
+
 
 def identificar_tipo_mensagem(texto):
 
     texto = texto.lower().strip()
 
-    # =================================
-    # CONSULTAS DE MEMÓRIA
-    # =================================
+
+
+
+# =================================
+# CONSULTAS DE MEMÓRIA
+# =================================
 
     perguntas_usuario = [
 
@@ -556,7 +615,17 @@ def identificar_tipo_mensagem(texto):
 
         "estou criando",
 
-        "estou desenvolvendo"
+        "estou desenvolvendo",
+
+        "favorito é",
+
+        "favorita é",
+
+        "eu prefiro",
+
+        "minha preferência é",
+
+        "minha preferencia é"
 
     ]
 
@@ -655,6 +724,12 @@ def detectar_memoria(texto):
     )
 
 
+    detectar_preferencias(
+        texto,
+        memoria
+    )
+
+
 
     memoria["interesses"] = remover_duplicados(
         memoria["interesses"]
@@ -676,6 +751,11 @@ def detectar_memoria(texto):
     )
 
 
+    memoria["preferencias"] = remover_duplicados(
+        memoria["preferencias"]
+    )
+
+
 
     encontrou = any([
 
@@ -691,7 +771,9 @@ def detectar_memoria(texto):
 
         memoria["caracteristicas"],
 
-        memoria["outras_memorias"]
+        memoria["outras_memorias"],
+
+        memoria["preferencias"]
 
     ])
 

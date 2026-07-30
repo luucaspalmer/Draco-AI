@@ -41,14 +41,6 @@ MEMORY_TYPES = {
         },
 
 
-
-    "CONVERSA":
-
-        {
-            "descricao":
-            "Informações temporárias da conversa atual."
-        }
-
 }
 
 

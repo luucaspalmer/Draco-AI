@@ -31,14 +31,6 @@ KNOWLEDGE_MEMORY = os.path.join(
 )
 
 
-CONVERSATION_MEMORY = os.path.join(
-    BASE_PATH,
-    "conversation_memory.json"
-)
-
-
-
-
 
 # =====================================
 # Leitura e escrita genérica
@@ -162,28 +154,6 @@ def carregar_memoria_conhecimento():
 
 
 
-
-
-def carregar_memoria_conversa():
-
-
-    return carregar_arquivo(
-
-        CONVERSATION_MEMORY,
-
-        {
-            "history":[]
-        }
-
-    )
-
-
-
-
-
-
-
-
 # =====================================
 # Contexto completo Draco
 # =====================================
@@ -218,10 +188,6 @@ def obter_memoria_contexto():
             carregar_memoria_conhecimento(),
 
 
-
-        "CONVERSA":
-
-            carregar_memoria_conversa()
 
     }
 
@@ -435,83 +401,3 @@ def buscar_preferencias():
     return carregar_memoria_preferencia()
 
 
-
-
-
-
-
-
-
-
-# =====================================
-# Conversas
-# =====================================
-
-
-def salvar_conversa(
-    usuario,
-    resposta
-):
-
-
-    memoria = carregar_memoria_conversa()
-
-
-
-    if "history" not in memoria:
-
-        memoria["history"] = []
-
-
-
-
-    memoria["history"].append(
-
-        {
-
-            "user":
-                usuario,
-
-
-            "assistant":
-                resposta
-
-        }
-
-    )
-
-
-
-
-    memoria["history"] = memoria["history"][-20:]
-
-
-
-
-    salvar_arquivo(
-
-        CONVERSATION_MEMORY,
-
-        memoria
-
-    )
-
-
-
-
-
-
-
-def buscar_conversa():
-
-
-    memoria = carregar_memoria_conversa()
-
-
-    return memoria.get(
-
-        "history",
-
-        []
-
-    )

@@ -48,7 +48,7 @@ backend/
 
 ---
 
-## Observações
+## Observações 1
 
 Atualmente coexistem duas arquiteturas:
 
@@ -56,3 +56,16 @@ Atualmente coexistem duas arquiteturas:
 2. Nova arquitetura localizada em backend/memory/.
 
 Durante a migração nenhuma delas será removida até que a nova arquitetura baseada em SQLite esteja totalmente funcional.
+
+
+
+## Observações 2
+
+A migração foi concluída. `backend/memory/` é a única arquitetura oficial
+de memória cognitiva do projeto (PERMANENTE, PROJETO, PREFERENCIA, CONHECIMENTO).
+
+O histórico de conversa (mensagens da sessão) foi desacoplado da memória
+cognitiva e passou a residir em `data/chat_history.json`, gerenciado por
+`backend/conversation_memory.py`.
+
+`backend/memory.py` (legado) foi removido.
