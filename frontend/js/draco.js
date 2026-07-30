@@ -32,7 +32,7 @@ const Draco = {
         SEARCHING_MEMORY:  "assets/images/Draco 2.png",
 
         THINKING:          "assets/images/Draco 2.png",
-        SPEAKING:          "assets/images/Draco 2.png",
+        SPEAKING:          "assets/images/Draco 4.png",
         ANSWERING:         "assets/images/Draco 2.png",
 
         ERROR:             "assets/images/Draco 2.png"

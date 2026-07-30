@@ -931,6 +931,44 @@
             "origem": "qwen",
             "confianca": 0.7,
             "timestamp": "2026-07-29 11:50:19"
+        },
+        {
+            "pergunta": "Quais são meus projetos ?",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projetos"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-29 13:27:51"
+        },
+        {
+            "pergunta": "Quais são meus projetos ?",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projetos"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-29 13:31:12"
+        },
+        {
+            "pergunta": "maconha",
+            "categoria": "conhecimento",
+            "chaves": [
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-29 13:32:05"
         }
     ]
 }
