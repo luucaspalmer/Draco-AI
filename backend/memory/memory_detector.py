@@ -531,7 +531,7 @@ def detectar_preferencias(texto, memoria):
 
 def identificar_tipo_mensagem(texto):
 
-    texto = texto.lower().strip()
+    texto_normalizado = texto.lower().strip()
 
 
 
@@ -552,7 +552,15 @@ def identificar_tipo_mensagem(texto):
 
         "qual meu nome",
 
+        "qual é meu nome",
+
+        "qual e meu nome",
+
         "qual minha idade",
+
+        "qual é minha idade",
+
+        "qual e minha idade",
 
         "onde eu moro",
 
@@ -573,7 +581,7 @@ def identificar_tipo_mensagem(texto):
 
     for pergunta in perguntas_usuario:
 
-        if pergunta in texto:
+        if pergunta in texto_normalizado:
 
             return "CONSULTA_MEMORIA"
 
@@ -582,59 +590,28 @@ def identificar_tipo_mensagem(texto):
     # QUALQUER PERGUNTA
     # =================================
 
-    if texto.endswith("?"):
+    if texto_normalizado.endswith("?"):
 
         return "CONVERSA"
 
 
     # =================================
-    # AFIRMAÇÕES PARA APRENDER
+    # APRENDER_MEMORIA
+    #
+    # detectar_memoria() é a única fonte de verdade
+    # sobre o que constitui uma memória válida. Não
+    # duplicamos aqui a lista de gatilhos: se ela
+    # encontrar algo, a mensagem é uma memória.
     # =================================
 
-    afirmacoes = [
-
-        "meu nome é",
-
-        "meu nome e",
-
-        "me chamo",
-
-        "eu sou",
-
-        "tenho",
-
-        "eu tenho",
-
-        "gosto de",
-
-        "eu gosto de",
-
-        "moro em",
-
-        "sou de",
-
-        "estou criando",
-
-        "estou desenvolvendo",
-
-        "favorito é",
-
-        "favorita é",
-
-        "eu prefiro",
-
-        "minha preferência é",
-
-        "minha preferencia é"
-
-    ]
+    memoria_detectada = detectar_memoria(
+        texto
+    )
 
 
-    for afirmacao in afirmacoes:
+    if memoria_detectada:
 
-        if afirmacao in texto:
-
-            return "APRENDER_MEMORIA"
+        return "APRENDER_MEMORIA"
 
 
     return "CONVERSA"   

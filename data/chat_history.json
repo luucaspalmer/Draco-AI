@@ -2,43 +2,43 @@
     "history": [
         {
             "role": "user",
-            "content": "Qual a previsão do tempo?  Qual a previsão do tempo?"
+            "content": "Qual a previsão do tempo de amanha ?"
         },
         {
             "role": "assistant",
-            "content": "Em Araucária, agora faz 13.2°C, com sensação de 12.1°C e encoberto. A umidade está em 93%.\n\nPara hoje, a temperatura varia entre 10.6°C e 20.1°C. Há até 0% de chance de chuva, com previsão de 0.0 mm ao longo do dia."
+            "content": "Em Araucária, agora faz 12.1°C, com sensação de 11.2°C e encoberto. A umidade está em 98%.\n\nPara hoje, a temperatura varia entre 10.6°C e 19.4°C. Há até 0% de chance de chuva, com previsão de 0.0 mm ao longo do dia."
         },
         {
             "role": "user",
-            "content": "Olá"
+            "content": "Quem é Lucas ?"
         },
         {
             "role": "assistant",
-            "content": "Olá Lucas, como posso ajudar com a previsão do tempo hoje em Araucária?"
+            "content": "Seu nome é Lucas."
         },
         {
             "role": "user",
-            "content": "Meu animal favorito é dragão."
+            "content": "O que é IA ?"
         },
         {
             "role": "assistant",
-            "content": "Dragões são lendários e fascinantes seres mitológicos."
+            "content": "IA refere-se a Inteligência Artificial, um campo da tecnologia onde computadores são programados para imitar pensamento humano e realizar tarefas complexas baseadas em dados e aprendizado."
         },
         {
             "role": "user",
-            "content": "Qual é meu animal favorito?"
+            "content": "Abre o cmd"
         },
         {
             "role": "assistant",
-            "content": "Seu animal favorito não foi mencionado em nossa conversa."
+            "content": "Abrindo cmd."
         },
         {
             "role": "user",
-            "content": "Meu animal favorito é dragão."
+            "content": "Qual a previsão do tempo?"
         },
         {
             "role": "assistant",
-            "content": "Meus valores são:\n- buscar conhecimento\n- preservar informações importantes\n- ajudar o usuário a evoluir\n- ser transparente\n- priorizar aprendizado contínuo\n"
+            "content": "Em Araucária, agora faz 12.1°C, com sensação de 11.2°C e encoberto. A umidade está em 98%.\n\nPara hoje, a temperatura varia entre 10.6°C e 19.4°C. Há até 0% de chance de chuva, com previsão de 0.0 mm ao longo do dia."
         }
     ]
 }

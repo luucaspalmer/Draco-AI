@@ -1029,6 +1029,90 @@
             "origem": "intelligence",
             "confianca": null,
             "timestamp": "2026-07-30 10:25:17"
+        },
+        {
+            "pergunta": "Boa noite Draco",
+            "categoria": "PERMANENTE",
+            "chaves": [
+                "nome",
+                "localizacao",
+                "idade"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-30 21:57:44"
+        },
+        {
+            "pergunta": "Boa noite Draco",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projetos"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-30 21:57:57"
+        },
+        {
+            "pergunta": "Boa noite Draco",
+            "categoria": "PREFERENCIA",
+            "chaves": [
+                "preferencias"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-30 21:58:01"
+        },
+        {
+            "pergunta": "Boa noite Draco",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-30 21:58:10"
+        },
+        {
+            "pergunta": "Meu animal favorito é o Dragão",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projetos"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-30 22:20:50"
+        },
+        {
+            "pergunta": "Qual meu animal favorito ?",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-30 22:21:37"
+        },
+        {
+            "pergunta": "usuario",
+            "categoria": "permanente",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome"
+            ],
+            "origem": "regras",
+            "confianca": 0.33,
+            "timestamp": "2026-07-30 22:48:22"
         }
     ]
 }

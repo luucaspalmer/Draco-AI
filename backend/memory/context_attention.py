@@ -98,7 +98,7 @@ CATEGORIA_PARA_CAMADA = {
 
 PROJETO_KEYWORDS = (
 
-    "draco", "projeto", "backend", "frontend",
+    "projeto", "backend", "frontend",
     "python", "codigo", "código", "ollama",
     "qwen", "memoria", "memória", "rag"
 
@@ -180,6 +180,36 @@ def decidir_atencao(pergunta, intencao, rota_pergunta=None):
         rota = rota_pergunta.get("route")
 
     plano = plano_vazio()
+
+
+
+
+    # =================================
+    # Saudações nunca usam memória
+    # =================================
+
+    SAUDACOES = (
+        "oi",
+        "olá",
+        "ola",
+        "bom dia",
+        "boa tarde",
+        "boa noite",
+        "e aí",
+        "eai"
+    )
+
+    if pergunta_lower in SAUDACOES:
+
+        plano["usar_conversa"] = True
+        plano["historico_limite"] = 2
+        plano["motivo"] = "Saudação simples"
+
+        return plano
+
+
+
+
 
     # =================================
     # 1 - Identidade do Draco
