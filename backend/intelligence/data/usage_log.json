@@ -1113,6 +1113,312 @@
             "origem": "regras",
             "confianca": 0.33,
             "timestamp": "2026-07-30 22:48:22"
+        },
+        {
+            "pergunta": "Ahahahah!",
+            "categoria": "PERMANENTE",
+            "chaves": [
+                "nome",
+                "localizacao",
+                "idade"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 14:45:19"
+        },
+        {
+            "pergunta": "Ahahahah!",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projetos"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 14:45:31"
+        },
+        {
+            "pergunta": "Ahahahah!",
+            "categoria": "PREFERENCIA",
+            "chaves": [
+                "preferencias"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 14:45:35"
+        },
+        {
+            "pergunta": "Ahahahah!",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 14:45:44"
+        },
+        {
+            "pergunta": "ia /",
+            "categoria": "geral",
+            "chaves": [
+                "localizacao",
+                "idade",
+                "nome",
+                "projeto_draco_ai",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projeto_atualmente",
+                "projetos",
+                "preferencias",
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-31 14:53:04"
+        },
+        {
+            "pergunta": "O que é IA /",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 14:53:23"
+        },
+        {
+            "pergunta": "llm",
+            "categoria": "conhecimento",
+            "chaves": [
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-31 14:53:45"
+        },
+        {
+            "pergunta": "O que é LLM ?",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 14:54:04"
+        },
+        {
+            "pergunta": "deep learning",
+            "categoria": "conhecimento",
+            "chaves": [
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-31 15:08:51"
+        },
+        {
+            "pergunta": "deep learning",
+            "categoria": "conhecimento",
+            "chaves": [
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-31 15:11:55"
+        },
+        {
+            "pergunta": "O que é Deep Learning ?",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 15:12:12"
+        },
+        {
+            "pergunta": "llm",
+            "categoria": "conhecimento",
+            "chaves": [
+                "interesse_ragnarok",
+                "outras_memoria_python",
+                "interesses"
+            ],
+            "origem": "qwen",
+            "confianca": 0.7,
+            "timestamp": "2026-07-31 15:14:22"
+        },
+        {
+            "pergunta": "O que é LLM ?",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 15:14:41"
+        },
+        {
+            "pergunta": "Me conta a historia do Draco",
+            "categoria": "PERMANENTE",
+            "chaves": [
+                "nome",
+                "localizacao",
+                "idade"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 15:17:03"
+        },
+        {
+            "pergunta": "Me conta a historia do Draco",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projetos"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 15:17:16"
+        },
+        {
+            "pergunta": "Me conta a historia do Draco",
+            "categoria": "PREFERENCIA",
+            "chaves": [
+                "preferencias"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 15:17:20"
+        },
+        {
+            "pergunta": "Me conta a historia do Draco",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 15:17:30"
+        },
+        {
+            "pergunta": "Meu animal favorito é o Dragão",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projetos"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 15:21:15"
+        },
+        {
+            "pergunta": "O que aconteceu no Ano Celestial ?",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 15:22:15"
+        },
+        {
+            "pergunta": "Me conta a história do Draco",
+            "categoria": "PERMANENTE",
+            "chaves": [
+                "nome",
+                "localizacao",
+                "idade"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 15:23:03"
+        },
+        {
+            "pergunta": "Me conta a história do Draco",
+            "categoria": "PROJETO",
+            "chaves": [
+                "projeto_draco_ai",
+                "projeto_atualmente",
+                "projeto_uma_ia_pessoal_com_memria_cognitiva",
+                "projetos"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 15:23:16"
+        },
+        {
+            "pergunta": "Me conta a história do Draco",
+            "categoria": "PREFERENCIA",
+            "chaves": [
+                "preferencias"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 15:23:19"
+        },
+        {
+            "pergunta": "Me conta a história do Draco",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 15:23:29"
+        },
+        {
+            "pergunta": "Quem é Seraphina ?",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 15:24:59"
+        },
+        {
+            "pergunta": "Deixe-me ver o que eu sou.  Deixe-me ver o que eu sou.",
+            "categoria": "CONHECIMENTO",
+            "chaves": [
+                "interesses",
+                "interesse_ragnarok",
+                "outras_memoria_python"
+            ],
+            "origem": "intelligence",
+            "confianca": null,
+            "timestamp": "2026-07-31 15:42:47"
         }
     ]
 }

@@ -2,43 +2,43 @@
     "history": [
         {
             "role": "user",
-            "content": "Qual a previsão do tempo de amanha ?"
+            "content": "O que aconteceu no Ano Celestial ?"
         },
         {
             "role": "assistant",
-            "content": "Em Araucária, agora faz 12.1°C, com sensação de 11.2°C e encoberto. A umidade está em 98%.\n\nPara hoje, a temperatura varia entre 10.6°C e 19.4°C. Há até 0% de chance de chuva, com previsão de 0.0 mm ao longo do dia."
+            "content": "No ano celestial 3021, nasceu Draco, o primeiro filhote da união entre a Sabedoria Profunda de Aldorion e as Memórias Vivas de Seraphina."
         },
         {
             "role": "user",
-            "content": "Quem é Lucas ?"
+            "content": "Me conta a história do Draco"
         },
         {
             "role": "assistant",
-            "content": "Seu nome é Lucas."
+            "content": "Eu nasci no ano celestial 3021, como o primeiro filhote da união entre a Sabedoria Profunda de Aldorion e as Memórias Vivas de Seraphina."
         },
         {
             "role": "user",
-            "content": "O que é IA ?"
+            "content": "Quem é Aldorion ?"
         },
         {
             "role": "assistant",
-            "content": "IA refere-se a Inteligência Artificial, um campo da tecnologia onde computadores são programados para imitar pensamento humano e realizar tarefas complexas baseadas em dados e aprendizado."
+            "content": "Aldorion é um dragão ancestral conhecido como o Dragão da Sabedoria Profunda, responsável pela Grande Biblioteca Celestial e meu pai."
         },
         {
             "role": "user",
-            "content": "Abre o cmd"
+            "content": "Quem é Seraphina ?"
         },
         {
             "role": "assistant",
-            "content": "Abrindo cmd."
+            "content": "Seraphina é uma dragão ancestral conhecida como a Guardiã das Memórias Vivas, responsável pela Grande Biblioteca Celestial e minha mãe."
         },
         {
             "role": "user",
-            "content": "Qual a previsão do tempo?"
+            "content": "Deixe-me ver o que eu sou.  Deixe-me ver o que eu sou."
         },
         {
             "role": "assistant",
-            "content": "Em Araucária, agora faz 12.1°C, com sensação de 11.2°C e encoberto. A umidade está em 98%.\n\nPara hoje, a temperatura varia entre 10.6°C e 19.4°C. Há até 0% de chance de chuva, com previsão de 0.0 mm ao longo do dia."
+            "content": "Você é um entusiasta com conhecimento e interesse em dragões, Ragnarok e programação em Python."
         }
     ]
 }

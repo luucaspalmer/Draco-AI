@@ -24,7 +24,9 @@ DRACO AI v1.1
 =========================================
 Data: 18/07/2026
 
-- Vamos implementar uma memoria cognitiva, para fazer ele interpretar e armazenar as responsta de uma jeito melhor. Draco deixa de apenas armazenar memória e começa a usar memória durante o raciocínio.
+- Vamos implementar uma memoria cognitiva, para fazer ele 
+interpretar e armazenar as responsta de uma jeito melhor. 
+Draco deixa de apenas armazenar memória e começa a usar memória durante o raciocínio.
 Draco recebe uma informação,
 estrutura,
 armazena,
@@ -49,7 +51,8 @@ DRACO AI v1.3
 =========================================
 Data: 20/07/2026
 
-Implementando o RAG no Draco AI, agora ele e capaz de analisar dados do banco de dados interno e usar como fonte principal para respostas.
+Implementando o RAG no Draco AI, agora ele e capaz de analisar dados 
+do banco de dados interno e usar como fonte principal para respostas.
 
 Novos recursos:
 
@@ -111,7 +114,8 @@ O objetivo dessa atualização foi reduzir
 o tempo de processamento e preparar o Draco
 para evoluir sem aumentar proporcionalmente
 o custo computacional.
-O Draco deixa de depender de força bruta e passa a utilizar inteligência de seleção de contexto.
+O Draco deixa de depender de força bruta e 
+passa a utilizar inteligência de seleção de contexto.
 
 
 =========================================
@@ -137,6 +141,29 @@ passa a realizar tarefas reais no computador,
 como abrir aplicativos e executar comandos do
 sistema.
 
+
+
+=========================================
+DRACO AI v1.7
+=========================================
+Data: 31/07/2026
+
+Nesta versão, o Draco AI deixa de depender
+exclusivamente do modelo local Qwen e passa
+a utilizar um LLM online chamado API Gemini.
+Permitindo maior capacidade de raciocínio,
+interpretação e geração de respostas.
+
+O Draco agora possui uma arquitetura híbrida:
+
+- Gemini como LLM principal online
+- Qwen como modelo local offline
+
+
+O Draco AI passa a responder com maior
+qualidade, compreensão contextual e capacidade
+de raciocínio, mantendo sua independência
+através do processamento local.
 
 
 

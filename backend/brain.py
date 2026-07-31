@@ -1,6 +1,6 @@
 from backend.commands import executar_comando
 
-from backend.ollama_client import perguntar_ao_qwen
+from backend.llm.llm_manager import llm_manager
 
 from backend.intents import identificar_intencao
 
@@ -793,7 +793,7 @@ def pensar(pergunta):
     # Resposta do modelo
     # =====================================
 
-    print("\n====== CHAMANDO QWEN ======")
+    print("\n====== CHAMANDO LLM ======")
     print("Pergunta:", pergunta)
     print("============================\n")
 
@@ -810,7 +810,7 @@ def pensar(pergunta):
 
 
 
-    resposta = perguntar_ao_qwen(
+    resposta = llm_manager.generate(
         prompt,
         num_predict=plano_resposta["num_predict"]
     )
